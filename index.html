@@ -331,7 +331,7 @@
         </div>
 
         <div class="pt-2 text-xs text-slate-500 dark:text-slate-400 border-t dark:border-slate-800">
-          <p>📞 <strong>Phone:</strong> 0693069464</p>
+          <p>📞 <strong>Phone:</strong> 0627714968</p>
           <p>📧 <strong>Email:</strong> contact@baosala.ma</p>
         </div>
       </div>
@@ -481,6 +481,7 @@
         quickHeritage: "Heritage", quickArtisans: "Artisans", quickFood: "Local Food", quickTours: "Tours",
         quickHotels: "Hotels", quickShopping: "Shopping", quickCurrency: "Currency", quickDarija: "Darija",
         featuredArtisans: "Featured Artisan Workshops", bookDemo: "Book Demo Experience",
+         previousUserNotes: "Notes from Previous Travelers", notesSubtitle: "What visitors discovered and remembered about Tangier",
         easiestWay: "Easiest Way:", openMap: "Open Map", MAD: "MAD"
       },
       fr: {
@@ -491,6 +492,7 @@
         quickHeritage: "Patrimoine", quickArtisans: "Artisans", quickFood: "Cuisine", quickTours: "Tours",
         quickHotels: "Hôtels", quickShopping: "Shopping", quickCurrency: "Devises", quickDarija: "Darija",
         featuredArtisans: "Ateliers d'Artisans en Vedette", bookDemo: "Réserver la Démo",
+         previousUserNotes: "Notes des Voyageurs Précédents", notesSubtitle: "Ce que les visiteurs ont découvert et retenu de Tanger",
         easiestWay: "Trajet le plus simple:", openMap: "Ouvrir Carte", MAD: "MAD"
       },
       ar: {
@@ -501,6 +503,7 @@
         quickHeritage: "التراث", quickArtisans: "الصناعة التقليدية", quickFood: "المأكولات", quickTours: "الجولات",
         quickHotels: "الفنادق", quickShopping: "التسوق", quickCurrency: "العملات", quickDarija: "الدارجة",
         featuredArtisans: "ورشات الصناعة التقليدية المميزة", bookDemo: "حجز تجربة توضيحية",
+         previousUserNotes: "ملاحظات من زوار سابقين", notesSubtitle: "ما اكتشفه الزوار وتذكروه عن طنجة",
         easiestWay: "أسهل طريقة:", openMap: "فتح الخريطة", MAD: "درهم"
       },
       es: {
@@ -511,6 +514,7 @@
         quickHeritage: "Patrimonio", quickArtisans: "Artesanos", quickFood: "Gastronomía", quickTours: "Tours",
         quickHotels: "Hoteles", quickShopping: "Compras", quickCurrency: "Moneda", quickDarija: "Darija",
         featuredArtisans: "Talleres Artesanales Destacados", bookDemo: "Reservar Demo",
+         previousUserNotes: "Notas de Viajeros Anteriores", notesSubtitle: "Lo que los visitantes descubrieron y recordaron de Tánger",
         easiestWay: "Forma más fácil:", openMap: "Abrir Mapa", MAD: "MAD"
       }
     };
@@ -559,6 +563,41 @@
         { name: "Spice and Argan Corner", rating: 4.6, price: "from 40 MAD", hours: "09:00-21:00", desc: "Pure argan oil, saffron, rose water, and custom tea blends by weight.", way: "2-min walk from Petit Socco", cost: 40, slug: "spice-corner", icon: "🌿" }
       ]
     };
+
+    const USER_NOTES = [
+      {
+        name: "Sofia",
+        origin: "Madrid, Spain",
+        date: "October 2026",
+        note: "The Medina felt much more authentic when I explored it on foot. I especially loved the small artisan workshops and the stories behind each craft.",
+        icon: "💬",
+        avatar: "S"
+      },
+      {
+        name: "Amine",
+        origin: "Casablanca, Morocco",
+        date: "September 2026",
+        note: "Cafe Hafa at sunset was one of my favorite moments. The view, mint tea and relaxed atmosphere made the experience unforgettable.",
+        icon: "🌅",
+        avatar: "A"
+      },
+      {
+        name: "Liam",
+        origin: "Dublin, Ireland",
+        date: "August 2026",
+        note: "I discovered places I would never have found through a typical tourist guide. The local food and hidden streets were the highlight of my trip.",
+        icon: "🧭",
+        avatar: "L"
+      },
+      {
+        name: "Yara",
+        origin: "Beirut, Lebanon",
+        date: "July 2026",
+        note: "The cooking experience was amazing. Learning about Moroccan spices and preparing a traditional dish made the visit feel personal.",
+        icon: "🍲",
+        avatar: "Y"
+      }
+    ];
 
     const MATCH_PROFILES = [
       { id: 1, name: "Sofia", age: 27, origin: "Madrid, Spain", dates: "Oct 12 - Oct 16", bio: "Art history researcher eager to explore Beat generation cafes and pottery studios.", budget: 450, group: "friends", interests: ['artisan', 'food', 'viewpoints'], vibes: ['heritage', 'cozy', 'authentic'], initial: "S", color: "bg-amber-500" },
@@ -830,6 +869,54 @@
                   </button>
                 </div>
               </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Notes From Previous Travelers -->
+        <div class="mt-2">
+          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-1 mb-3">
+            <div>
+              <h2 class="font-serif font-bold text-lg text-navy dark:text-amber-400">
+                💬 ${t.previousUserNotes}
+              </h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                ${t.notesSubtitle}
+              </p>
+            </div>
+            <span class="text-[10px] uppercase tracking-wider font-bold text-terracotta">
+              Traveler Notes
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            ${USER_NOTES.map(note => `
+              <article class="bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 p-4 shadow-sm hover:shadow-md transition flex flex-col">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-full bg-navy text-amber-300 flex items-center justify-center font-serif font-bold text-sm">
+                      ${note.avatar}
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-xs text-slate-800 dark:text-slate-100">${note.name}</h3>
+                      <p class="text-[10px] text-slate-500 dark:text-slate-400">${note.origin}</p>
+                    </div>
+                  </div>
+                  <span class="text-lg" title="Traveler note">${note.icon}</span>
+                </div>
+
+                <div class="flex gap-1 text-amber-400 text-xs mb-2" aria-label="5 stars">
+                  ★ ★ ★ ★ ★
+                </div>
+
+                <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 flex-1">
+                  “${note.note}”
+                </p>
+
+                <div class="mt-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+                  <span class="text-[10px] text-slate-400">${note.date}</span>
+                </div>
+              </article>
             `).join('')}
           </div>
         </div>
