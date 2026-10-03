@@ -1,154 +1,1902 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Baosala - Discover Tangier Differently</title>
-<meta name="theme-color" content="#0f2b48">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Baosala">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={darkMode:'class'}</script>
-<style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html,body{height:100%;margin:0;font-family:Georgia,'Times New Roman',serif;background:#f6efe4;color:#1d2a38}
-.dark body{background:#0b1a2b;color:#efe6d8}
-.zel{height:8px;background:repeating-conic-gradient(#c8553d 0 25%,#0f2b48 0 50%,#e9d9b8 0 75%,#0f6b52 0) 0 0/16px 16px}
-.card{background:#fffaf1;border:1px solid #e3d3b5;border-radius:14px}
-.dark .card{background:#12263c;border-color:#23405f}
-.inp{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #d7c4a0;background:#fffdf8;color:inherit}
-.dark .inp{background:#0b1a2b;border-color:#2c4c6e}
-.btn{background:#c8553d;color:#fff;padding:10px 16px;border-radius:10px;font-weight:700}
-.btn2{border:2px solid #0f2b48;padding:8px 14px;border-radius:10px;font-weight:700}
-.dark .btn2{border-color:#8fb4d9}
-.chip{padding:3px 9px;border-radius:99px;font-size:12px;background:#0f6b5222;color:#0f6b52}
-.dark .chip{color:#6fd1b0}
-.tr{background:#0f2b4814;border-left:4px solid #c8553d;padding:6px 10px;border-radius:8px;font-size:13px}
-.dark .tr{background:#ffffff12}
-.mapbox{height:70px;border-radius:10px;background:repeating-linear-gradient(45deg,#d9e6df 0 10px,#c9dbd2 10px 20px);display:flex;align-items:center;justify-content:center;font-size:13px;color:#0f2b48}
-.dark .mapbox{background:repeating-linear-gradient(45deg,#17344f 0 10px,#12293f 10px 20px);color:#cfe}
-.sw{transition:transform .3s,opacity .3s}
-@media(min-width:1024px){
-#app{max-width:1280px!important;display:grid!important;grid-template-columns:240px 1fr;grid-template-rows:auto 1fr;grid-template-areas:"h h" "n m"}
-#hd{grid-area:h}
-#nv{grid-area:n;flex-direction:column!important;justify-content:flex-start!important;gap:6px;padding:20px 12px!important;border-top:0!important;border-right:1px solid #e3d3b5;align-self:stretch}
-.dark #nv{border-right-color:#23405f}
-#nv button{flex-direction:row!important;width:100%!important;gap:12px;font-size:16px!important;padding:12px 14px;border-radius:12px;justify-content:flex-start}
-#nv button:hover{background:#c8553d18}
-#main{grid-area:m;padding:24px 32px!important;display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;align-content:start}
-#main>*{grid-column:1/-1}
-#main>.card.mb-3{grid-column:auto;margin:0!important}
-#main[data-t=narrow]{display:block;max-width:680px;margin:0 auto;width:100%}
-#main>.grid-cols-2{grid-template-columns:repeat(4,1fr)}
-#hm .grid-cols-4{grid-template-columns:repeat(8,1fr)!important}
-#res{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
-#res .card{margin:0!important}
-#modal{align-items:center!important}
-#modal .card{border-radius:20px!important}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Baosala - Discover Tangier Differently | البوصلة - طنجة</title>
+  
+  <!-- PWA & Meta Tags -->
+  <meta name="theme-color" content="#0f2b48">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Tangier culture, heritage, local artisans, trip planner and traveler matching for youth ambassadors hackathon.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f2b48'/><circle cx='50' cy='50' r='35' fill='none' stroke='%23f5c518' stroke-width='6'/><polygon points='50,20 62,50 50,80 38,50' fill='%23b8553a'/><polygon points='50,20 50,80 62,50' fill='%23f5c518'/></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            sand: '#f4efe4',
+            'door-blue': '#1f5d8c',
+            navy: '#0f2b48',
+            terracotta: '#b8553a',
+            emerald: '#2f6b4f',
+            mustard: '#d9a441',
+            darknavy: '#0a1c2e',
+            darkcard: '#12263c'
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Nunito Sans', 'system-ui', 'sans-serif'],
+            arabic: ['Tajawal', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Zellij pattern stripe under header */
+    .zellij-strip {
+      height: 6px;
+      background: repeating-linear-gradient(
+        90deg,
+        #1f5d8c 0px, #1f5d8c 12px,
+        #f4efe4 12px, #f4efe4 18px,
+        #b8553a 18px, #b8553a 30px,
+        #f4efe4 30px, #f4efe4 36px,
+        #2f6b4f 36px, #2f6b4f 48px,
+        #f4efe4 48px, #f4efe4 54px
+      );
+    }
+    
+    /* Arch top frame for Moroccan doorway aesthetic */
+    .arch-image {
+      border-radius: 50% 50% 0 0 / 34px 34px 0 0;
+      overflow: hidden;
+    }
+
+    /* Scrollbar customization */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1f5d8c40;
+      border-radius: 10px;
+    }
+
+    /* Touch target utilities */
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Range slider custom styling */
+    input[type=range] {
+      accent-color: #b8553a;
+    }
+
+    /* Pulse animation for active elements */
+    @keyframes subtlePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(0.98); }
+    }
+    .animate-subtle-pulse {
+      animation: subtlePulse 3s infinite ease-in-out;
+    }
+  </style>
 </head>
-<body>
-<div id="app" class="max-w-md mx-auto h-full flex flex-col relative overflow-hidden"></div>
-<div id="modal" class="hidden fixed inset-0 z-50 bg-black/60 items-end justify-center" onclick="if(event.target===this)closeM()"></div>
-<script>
-const T={en:{home:'Home',explore:'Explore',plan:'My Plan',match:'Match',profile:'Profile',search:'Search places, food, workshops...',tag:'Discover Tangier Differently',feat:'Featured experiences',close:'Close',gen:'Generate My Bawsala Plan',next:'Next',back:'Back',pass:'Pass',conn:'Connect',save:'Save profile',book:'Book Demo Experience',swap:'Swap / Edit',nores:'Nothing found. Try another word.'},
-fr:{home:'Accueil',explore:'Explorer',plan:'Mon plan',match:'Match',profile:'Profil',search:'Lieux, cuisine, ateliers...',tag:'Découvrez Tanger autrement',feat:'Expériences à la une',close:'Fermer',gen:'Générer mon plan Bawsala',next:'Suivant',back:'Retour',pass:'Passer',conn:'Se connecter',save:'Enregistrer',book:'Réserver une démo',swap:'Changer',nores:'Aucun résultat.'},
-ar:{home:'الرئيسية',explore:'استكشف',plan:'خطتي',match:'تعارف',profile:'الملف',search:'ابحث عن أماكن، أكل، ورشات...',tag:'اكتشف طنجة بطريقة مختلفة',feat:'تجارب مميزة',close:'إغلاق',gen:'أنشئ خطة بوصلة',next:'التالي',back:'رجوع',pass:'تخطي',conn:'تواصل',save:'حفظ الملف',book:'احجز تجربة',swap:'تبديل',nores:'لا توجد نتائج.'},
-es:{home:'Inicio',explore:'Explorar',plan:'Mi plan',match:'Match',profile:'Perfil',search:'Lugares, comida, talleres...',tag:'Descubre Tánger de otra forma',feat:'Experiencias destacadas',close:'Cerrar',gen:'Generar mi plan Bawsala',next:'Siguiente',back:'Atrás',pass:'Pasar',conn:'Conectar',save:'Guardar perfil',book:'Reservar demo',swap:'Cambiar',nores:'Sin resultados.'}};
-const CATS=[['heritage','🏛️','Heritage'],['workshops','🏺','Artisan Workshops'],['food','🍲','Local Food'],['activities','🏄','Tours & Activities'],['hotels','🏨','Hotels & Stays'],['shopping','🛍️','Shopping'],['currency','💱','Currency'],['translator','🗣️','Darija Translator']];
-const D=[
-['heritage','🏛️','Kasbah Museum',4.7,'20 MAD','10:00-18:00','Sultan palace turned museum, built in the 17th century over Roman ruins.','10-min walk through Kasbah alleys',20],
-['heritage','🌊','Cap Spartel',4.8,'Free','Open 24/7','Where the Atlantic meets the Mediterranean, with an 1864 lighthouse.','Petit Taxi from Grand Socco ~120 MAD round trip',60],
-['heritage','🕳️','Hercules Caves',4.5,'10 MAD','09:00-20:00','Sea cave with an opening shaped like Africa, tied to Greek myth.','Grand Taxi shared from Cap Spartel ~15 MAD',10],
-['heritage','🕌','Grand Socco',4.4,'Free','Open 24/7','The lively square between the old and new town, gateway to the Medina.','5-min walk from the Medina gate',0],
-['heritage','📜','American Legation',4.6,'Free','10:00-17:00','First US diplomatic property abroad, now a museum of Tangier history.','Walk 8 min from Petit Socco',0],
-['workshops','🏺','Pottery with Master Ahmed',4.9,'250 MAD','2.5 h','Spin the wheel and decorate your own clay piece to take home.','Petit Taxi from Grand Socco ~15 MAD',250],
-['workshops','👞','Leathercraft with Fatima',4.8,'300 MAD','3 h','Stitch your own babouches or a small bag in the old Medina.','10-min walk through Medina alleys',300],
-['workshops','🧵','Moroccan Weaving',4.7,'220 MAD','2 h','Work a traditional loom with a local weaver.','Walk 12 min from Grand Socco',220],
-['workshops','🎨','Zellige Decor Class',4.9,'280 MAD','2.5 h','Cut and set hand-made zellige tiles into a small panel.','Petit Taxi ~15 MAD',280],
-['workshops','🥘','Cooking Class with Chef Amina',5,'400 MAD','4 h','Souk shopping, then a chicken and olive tagine and mint tea.','Petit Taxi to Kasbah ~15 MAD',400],
-['food','🍲','Tagine at Cafe Hafa area',4.7,'~90 MAD','12:00-22:00','Slow-cooked beef tagine with sea views.','Petit Taxi ~20 MAD',90],
-['food','🥧','Seafood Pastilla',4.9,'~150 MAD','12:00-23:00','Crisp warqa pastry filled with fish and shrimp.','Walk 7 min from Grand Socco',150],
-['food','🍳','Tangier Breakfast',4.6,'~45 MAD','07:00-12:00','Msemen, olives, khlii eggs and fresh juice.','Walk in the Medina',45],
-['food','🍵','Mint Tea Terrace',4.8,'~15 MAD','09:00-00:00','Cliff-side tea with a view of the Strait.','Petit Taxi ~15 MAD',15],
-['activities','🚶','Guided Medina Walk',4.8,'150 MAD','2.5 h','Stories, hidden doors and the best viewpoints.','Meet at Grand Socco',150],
-['activities','🚌','Hop-On Hop-Off Bus',4.3,'130 MAD','All day','Open-top bus across the main landmarks.','Starts at the port',130],
-['activities','🐎','Cap Spartel Horse Riding',4.6,'200 MAD','1.5 h','Ride along the Atlantic beach and forest.','Petit Taxi ~120 MAD',200],
-['activities','🏖️','Atlantic Beach Day',4.4,'Free','All day','Sun, surf lessons and fresh grilled fish.','Local bus 2 MAD / taxi ~25 MAD',40],
-['hotels','🏨','Riad Kasbah Blue',4.8,'750 MAD / 70 EUR','Check-in 14:00','Luxury riad with a rooftop and Strait views. Wi-Fi, breakfast, spa.','Petit Taxi from port ~20 MAD',750],
-['hotels','🛏️','Boutique Medina Stay',4.5,'420 MAD / 39 EUR','Check-in 15:00','Small design hotel in the Medina. Wi-Fi, AC, terrace.','Walk from Grand Socco 6 min',420],
-['hotels','🏠','Budget Hostel Tanja',4.2,'130 MAD / 12 EUR','Check-in 13:00','Clean, social and central. Wi-Fi, kitchen.','Walk from the train station 15 min',130],
-['shopping','🕯️','Lantern and Brass Souk',4.5,'from 80 MAD','09:00-20:00','Hand-hammered lamps and trays. Bargain politely.','Walk through Rue es-Siaghin',80],
-['shopping','🧶','Cooperative Carpets',4.7,'from 400 MAD','10:00-19:00','Berber rugs sold by the women cooperatives that weave them.','Petit Taxi ~15 MAD',400],
-['shopping','🫒','Spice and Argan Corner',4.6,'from 40 MAD','09:00-21:00','Spices, argan oil and rose water by weight.','2-min walk from Petit Socco',40]
-].map((a,i)=>({id:i,c:a[0],e:a[1],n:a[2],r:a[3],p:a[4],h:a[5],d:a[6],t:a[7],m:a[8]}));
-const PH=[['Greetings','Hello','Salam','سلام'],['Greetings','Thank you','Choukran','شكرا'],['Shopping','How much is this?','Bchhal hada?','بشحال هادا'],['Shopping','Too expensive','Ghali bzaf','غالي بزاف'],['Dining','The bill please','L7ssab afak','الحساب عفاك'],['Dining','Water, please','Ma afak','الماء عفاك'],['Emergency','I need help','Bghit mosaada','بغيت مساعدة'],['Emergency','Call the police','3ayet 3la lboulis','عيط على البوليس'],['Directions','Where is the Medina?','Fin kayna lmdina?','فين كاينة المدينة'],['Directions','Where is the bathroom?','Fin kayn toilet?','فين كاين تواليت']];
-const RATE={USD:.1,EUR:.092,GBP:.079,SAR:.375};
-const PEOPLE=[['Sofia',27,'Madrid','12-16 Nov','Medina history, photography, pottery','history,photo,crafts',400],['Liam',31,'Dublin','10-14 Nov','Hiking, coastal walks, street food','nature,food,hiking',300],['Yara',25,'Beirut','13-18 Nov','Cooking, souks, calm cafes','food,souks,crafts',500],['Noah',29,'Lyon','12-15 Nov','Architecture, zellige, history','history,crafts,photo',350]].map(p=>({n:p[0],a:p[1],o:p[2],d:p[3],b:p[4],i:p[5].split(','),bud:p[6]}));
-const S={lang:'en',dark:false,tab:'home',cat:null,q:'',notif:'all',loc:true,unread:2,step:1,wiz:{days:2,start:'Tangier Port',int:['Medina'],vibe:'Calm',budget:2000,al:{Food:30,Activities:30,Transport:15,Stay:25}},plan:null,deck:0,chat:[],prof:{name:'',age:'',hobbies:'history,photo',vibe:'Calm',cities:''},saved:0};
-const t=k=>T[S.lang][k]||T.en[k];
-const $=s=>document.querySelector(s);
-const star=r=>'⭐ '+r;
-function openM(h){const m=$('#modal');m.innerHTML='<div class="card w-full max-w-md max-h-[88%] overflow-y-auto p-4" style="border-radius:20px 20px 0 0">'+h+'<button class="btn2 w-full mt-3" onclick="closeM()">'+t('close')+'</button></div>';m.classList.remove('hidden');m.classList.add('flex')}
-function closeM(){const m=$('#modal');m.classList.add('hidden');m.classList.remove('flex')}
-function logo(){return '<span class="inline-flex items-center bg-[#0f2b48] text-white px-2 py-1 rounded-lg font-bold text-lg" dir="ltr">Ba<svg width="20" height="20" viewBox="0 0 24 24" class="mx-px"><circle cx="12" cy="12" r="10" fill="none" stroke="#f5c518" stroke-width="2.5"/><path d="M12 4l3 8-3 8-3-8z" fill="#f5c518"/><path d="M12 4l3 8H9z" fill="#c8553d"/></svg>sala</span>'}
-function header(){return '<div id="hd"><div class="zel"></div><div class="flex items-center justify-between px-3 py-2">'+logo()+'<div class="flex items-center gap-2"><select class="inp !w-auto !py-1" onchange="setLang(this.value)">'+[['en','English'],['fr','Français'],['ar','العربية'],['es','Español']].map(l=>'<option value="'+l[0]+'"'+(S.lang==l[0]?' selected':'')+'>'+l[1]+'</option>').join('')+'</select><button class="relative text-xl" onclick="notifM()">🔔'+(S.unread?'<span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-red-600"></span>':'')+'</button><button class="text-xl" onclick="toggleTheme()">'+(S.dark?'☀️':'🌙')+'</button><button class="text-xl" onclick="aboutM()">🌍</button></div></div></div>'}
-function nav(){const it=[['home','🏠'],['explore','🗺️'],['plan','🧭'],['match','🤝'],['profile','👤']];return '<div id="nv" class="flex justify-around border-t py-2 card !rounded-none">'+it.map(i=>'<button onclick="go(\''+i[0]+'\')" class="flex flex-col items-center text-xs w-16 '+(S.tab==i[0]?'text-[#c8553d] font-bold':'opacity-70')+'"><span class="text-2xl">'+i[1]+'</span>'+t(i[0])+'</button>').join('')+'</div>'}
-function render(){document.documentElement.dir=S.lang=='ar'?'rtl':'ltr';document.documentElement.lang=S.lang;document.documentElement.classList.toggle('dark',S.dark);const v={home:home,explore:explore,plan:planV,match:matchV,profile:profV}[S.tab];$('#app').innerHTML=header()+'<div id="main" data-t="'+((['plan','match','profile'].includes(S.tab)||(S.tab=='explore'&&(S.cat=='currency'||S.cat=='translator')))?'narrow':'wide')+'" class="flex-1 overflow-y-auto p-3 pb-6">'+v()+'</div>'+nav();if(S.tab=='home')showSearch();if(S.tab=='explore'&&S.cat=='currency')conv()}
-function go(x){S.tab=x;if(x=='explore')S.cat=null;render()}
-function setLang(l){S.lang=l;render()}
-function toggleTheme(){S.dark=!S.dark;render()}
-function home(){return '<div class="rounded-2xl p-5 text-white mb-3" style="background:linear-gradient(135deg,#0f2b48,#c8553d)"><div class="text-3xl mb-1">🕌🌅</div><h1 class="text-2xl font-bold">'+t('tag')+'</h1><p class="text-sm opacity-90">Medina, Kasbah, Atlantic.</p></div><input id="q" class="inp mb-3" placeholder="'+t('search')+'" value="'+S.q+'" oninput="S.q=this.value;showSearch()"><div id="res"></div><div id="hm"><div class="grid grid-cols-4 gap-2 mb-4">'+CATS.map(c=>'<button class="card py-2 text-center text-[11px]" onclick="openCat(\''+c[0]+'\')"><div class="text-2xl">'+c[1]+'</div>'+c[2].split(' ')[0]+'</button>').join('')+'</div><h2 class="font-bold mb-2">'+t('feat')+'</h2><div class="flex gap-3 overflow-x-auto pb-2">'+D.filter(x=>x.c=='workshops').map(x=>'<div class="card min-w-[200px] p-3"><div class="text-4xl mb-1">'+x.e+'</div><b class="text-sm">'+x.n+'</b><div class="text-xs mt-1">'+star(x.r)+' · '+x.p+'</div><button class="btn mt-2 !py-1 text-sm" onclick="itemM('+x.id+')">'+t('book')+'</button></div>').join('')+'</div></div>'}
-function showSearch(){const r=$('#res');if(!r)return;const q=S.q.trim().toLowerCase();$('#hm').style.display=q?'none':'block';if(!q){r.innerHTML='';return}const f=D.filter(x=>(x.n+x.d+x.c).toLowerCase().includes(q));r.innerHTML=f.length?f.map(cardH).join(''):'<p class="opacity-70">'+t('nores')+'</p>'}
-function openCat(c){S.tab='explore';S.cat=c;render()}
-function explore(){if(!S.cat)return '<h1 class="text-xl font-bold mb-3">'+t('explore')+' Tangier</h1><div class="grid grid-cols-2 gap-3">'+CATS.map(c=>'<button class="card p-5 text-center" onclick="openCat(\''+c[0]+'\')"><div class="text-4xl">'+c[1]+'</div><b class="text-sm">'+c[2]+'</b></button>').join('')+'</div>';
-const back='<button class="btn2 mb-3" onclick="S.cat=null;render()">← '+t('back')+'</button>';
-if(S.cat=='currency')return back+curV();if(S.cat=='translator')return back+trV();
-return back+D.filter(x=>x.c==S.cat).map(cardH).join('')}
-function cardH(x){return '<div class="card mb-3 overflow-hidden"><div class="h-24 flex items-center justify-center text-5xl" style="background:linear-gradient(135deg,#e9d9b8,#c8553d55)">'+x.e+'</div><div class="p-3"><div class="flex justify-between"><b>'+x.n+'</b><span class="text-sm">'+star(x.r)+'</span></div><p class="text-sm my-1">'+x.d+'</p><div class="text-xs opacity-80 mb-2">💰 '+x.p+' · 🕒 '+x.h+'</div><div class="tr mb-2">🚕 <b>Easiest way:</b> '+x.t+'</div><a class="mapbox" target="_blank" rel="noopener" href="https://www.google.com/maps/search/'+encodeURIComponent(x.n+' Tangier')+'">📍 Open map · '+x.n+'</a>'+(x.c=='workshops'?'<button class="btn w-full mt-2" onclick="itemM('+x.id+')">'+t('book')+'</button>':'')+'</div></div>'}
-function itemM(i){const x=D[i];openM('<div class="text-5xl text-center">'+x.e+'</div><h2 class="font-bold text-lg">'+x.n+'</h2><p class="text-sm my-2">'+x.d+'</p><p class="text-sm">'+x.p+' · '+x.h+'</p><input class="inp my-2" placeholder="Your name" id="bn"><input type="date" class="inp mb-2"><button class="btn w-full" onclick="bookDone('+i+')">'+t('book')+'</button>')}
-function bookDone(i){const n=($('#bn').value||'Traveler');openM('<div class="text-center py-6"><div class="text-5xl">✅</div><h2 class="font-bold text-lg mt-2">Booked, '+n+'!</h2><p class="text-sm">'+D[i].n+' — the artisan will confirm by message.</p></div>')}
-function curV(){return '<h2 class="font-bold text-lg mb-2">💱 Currency (MAD)</h2><p class="text-xs opacity-70 mb-2">Offline sample rates. Connect a live API in production.</p><input id="amt" type="number" value="100" class="inp mb-2" oninput="conv()"><select id="cur" class="inp mb-2" onchange="conv()">'+Object.keys(RATE).map(k=>'<option>'+k+'</option>').join('')+'</select><select id="dir" class="inp mb-2" onchange="conv()"><option value="f">MAD → foreign</option><option value="r">Foreign → MAD</option></select><div id="cout" class="card p-4 text-xl font-bold text-center"></div><script>setTimeout(conv,0)<\/script>'}
-function conv(){const a=+$('#amt').value||0,c=$('#cur').value,f=$('#dir').value=='f';$('#cout').textContent=f?a+' MAD = '+(a*RATE[c]).toFixed(2)+' '+c:a+' '+c+' = '+(a/RATE[c]).toFixed(2)+' MAD'}
-function trV(){const g={};PH.forEach(p=>(g[p[0]]=g[p[0]]||[]).push(p));return '<h2 class="font-bold text-lg mb-2">🗣️ Darija</h2><button class="btn w-full mb-2" onclick="mic()">🎙️ Speak a phrase (English)</button><div id="mo" class="card p-3 mb-3 text-sm">Press the mic and say a phrase like "thank you".</div>'+Object.keys(g).map(k=>'<h3 class="font-bold mt-2">'+k+'</h3>'+g[k].map(p=>'<div class="card p-3 my-1 flex justify-between items-center"><div><div class="text-sm opacity-80">'+p[1]+'</div><b>'+p[2]+'</b> <span dir="rtl" class="opacity-80">'+p[3]+'</span></div><button class="text-2xl" onclick="say(\''+p[3]+'\')">🔊</button></div>').join('')).join('')}
-function say(s){try{const u=new SpeechSynthesisUtterance(s);u.lang='ar-MA';speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){alert('Audio is not supported in this browser.')}}
-function mic(){const R=window.SpeechRecognition||window.webkitSpeechRecognition,o=$('#mo');if(!R){o.textContent='Voice input is not supported here. Try Chrome.';return}const r=new R();r.lang='en-US';o.textContent='Listening...';r.onresult=e=>{const s=e.results[0][0].transcript.toLowerCase().replace(/[?.!]/g,'');const m=PH.find(p=>s.includes(p[1].toLowerCase().replace(/[?.!]/g,'')));o.innerHTML=m?'You said: <i>'+s+'</i><br><b>'+m[2]+'</b> <span dir="rtl">'+m[3]+'</span>':'You said: <i>'+s+'</i><br>No match in the phrasebook yet.'};r.onerror=()=>o.textContent='Microphone blocked or unavailable.';r.start()}
-function notifM(){S.unread=0;openM('<h2 class="font-bold text-lg mb-2">🔔 Notifications</h2><div class="card p-3 mb-2 text-sm">🎟️ 20% off Tangier Kasbah Guided Tour this weekend</div><div class="card p-3 mb-2 text-sm">💬 Sofia from Madrid liked your trip plan</div><label class="block text-sm font-bold mt-3">Preferences</label><select class="inp my-1" onchange="S.notif=this.value">'+[['all','Allow all notifications'],['promo','Promotions only'],['off','Notifications disabled']].map(o=>'<option value="'+o[0]+'"'+(S.notif==o[0]?' selected':'')+'>'+o[1]+'</option>').join('')+'</select><label class="flex justify-between items-center mt-2 text-sm"><span>📍 Live location</span><input type="checkbox" '+(S.loc?'checked':'')+' onchange="S.loc=this.checked"></label>');render()}
-function aboutM(){const tm=[['💻','Mourtada','Developer','App architecture and smooth digital experience'],['🎨','Moad','Graphic Designer','Visual identity and Tangier aesthetic'],['📖','Afaf','Storyteller','Cultural research and authentic narrative'],['📸','Iman','Content & Media','Photography and local perspective'],['🤝','Badreddine','Project & Community','Partnerships and local relations']];openM('<div class="text-center mb-2">'+logo()+'</div><p dir="rtl" class="text-center text-sm font-bold">شبابنا سفراء التراث و الابتكار الثقافي - طنجة 2026</p><p class="text-sm my-2">Five young creators from Tangier helping visitors experience the authentic city.</p>'+tm.map(m=>'<div class="card p-2 my-1 text-sm">'+m[0]+' <b>'+m[1]+'</b> ('+m[2]+')<br><span class="opacity-80">'+m[3]+'</span></div>').join('')+'<p class="text-sm mt-2">📞 0693069464<br>✉️ contact@baosala.ma</p>')}
-// ---- Plan wizard
-function planV(){if(S.plan)return dash();const w=S.wiz,s=S.step;let b='';
-if(s==1)b='<label class="text-sm">Destination</label><input class="inp mb-2" value="Tangier, Morocco" readonly><label class="text-sm">Starting point</label><input class="inp mb-2" value="'+w.start+'" oninput="S.wiz.start=this.value"><label class="text-sm">Days</label><input type="number" min="1" max="7" class="inp" value="'+w.days+'" oninput="S.wiz.days=Math.min(7,Math.max(1,+this.value||1))">';
-if(s==2)b=['Medina','Coastal','Souks'].map(k=>'<label class="card p-3 mb-2 flex gap-2"><input type="checkbox" '+(w.int.includes(k)?'checked':'')+' onchange="tg(\''+k+'\')"> '+({Medina:'Medina & Historical Monuments / المآثر التاريخية',Coastal:'Coastal Nature',Souks:'Local Souks'})[k]+'</label>').join('')+'<div class="flex gap-2 mt-2">'+['Adventure','Calm'].map(v=>'<button class="flex-1 '+(w.vibe==v?'btn':'btn2')+'" onclick="S.wiz.vibe=\''+v+'\';render()">'+(v=='Calm'?'Calm & Relax':v)+'</button>').join('')+'</div>';
-if(s==3)b='<label class="text-sm">Total budget (MAD)</label><input type="number" class="inp mb-3" value="'+w.budget+'" oninput="S.wiz.budget=+this.value||0">'+Object.keys(w.al).map(k=>'<div class="text-sm">'+k+': <b id="al'+k+'">'+w.al[k]+'</b>%</div><input type="range" class="w-full" value="'+w.al[k]+'" oninput="S.wiz.al[\''+k+'\']=+this.value;$(\'#al'+k+'\').textContent=this.value">').join('');
-if(s==4)b='<p class="mb-3 text-sm">'+w.days+' day(s) · '+w.int.join(', ')+' · '+w.vibe+' · '+w.budget+' MAD</p><button class="btn w-full" id="gb" onclick="genPlan()">'+t('gen')+'</button>';
-return '<h1 class="text-xl font-bold mb-1">🧭 '+t('plan')+'</h1><div class="text-xs mb-3 opacity-70">Step '+s+' / 4</div><div class="card p-4">'+b+'</div><div class="flex justify-between mt-3">'+(s>1?'<button class="btn2" onclick="S.step--;render()">'+t('back')+'</button>':'<span></span>')+(s<4?'<button class="btn" onclick="S.step++;render()">'+t('next')+'</button>':'')+'</div>'}
-function tg(k){const a=S.wiz.int;a.includes(k)?a.splice(a.indexOf(k),1):a.push(k)}
-function pool(){const m={Medina:['heritage','workshops'],Coastal:['activities','heritage'],Souks:['shopping','food']};let cs=[];S.wiz.int.forEach(k=>cs=cs.concat(m[k]));if(!cs.length)cs=['heritage','food'];return D.filter(x=>cs.includes(x.c)&&x.c!='hotels')}
-function genPlan(){$('#gb').innerHTML='⏳ Building your route...';setTimeout(()=>{const p=pool().sort((a,b)=>b.r-a.r),n=S.wiz.days;S.plan=Array.from({length:n},(_,d)=>[0,1,2].map(i=>p[(d*3+i)%p.length].id));render()},1200)}
-function total(){let s=0;S.plan.forEach(d=>d.forEach(i=>s+=D[i].m+10));return s+S.plan.length*30}
-function dash(){const T0=['09:30','13:00','16:30'],tot=total(),ok=tot<=S.wiz.budget;return '<h1 class="text-xl font-bold mb-2">Your Bawsala Plan</h1><div class="card p-3 mb-2 text-sm">☀️ <b>Sunny, 22°C</b> — ideal for Kasbah walking<br>🎉 Local culture event: Tangier open-air music nights this week<br>📶 eSIM tip: Orange or Inwi tourist data ~50 MAD at the port</div><div class="card p-3 mb-3 font-bold '+(ok?'text-emerald-700':'text-red-600')+'">Total: '+tot+' MAD / budget '+S.wiz.budget+' MAD</div>'+S.plan.map((d,di)=>'<h3 class="font-bold mt-2">Day '+(di+1)+'</h3>'+d.map((id,si)=>{const x=D[id];return '<div class="card p-3 my-1 flex justify-between gap-2"><div class="text-sm"><b>'+T0[si]+'</b> '+x.e+' '+x.n+'<div class="opacity-70 text-xs">'+x.m+' MAD · transport ~10 MAD</div></div><button class="btn2 !py-1 text-xs" onclick="swapM('+di+','+si+')">'+t('swap')+'</button></div>'}).join('')+'<div class="text-xs opacity-70">Local transport fee included: 30 MAD</div>').join('')+'<button class="btn2 w-full mt-3" onclick="S.plan=null;S.step=1;render()">New plan</button>'}
-function swapM(d,s){const cur=S.plan[d][s];openM('<h2 class="font-bold mb-2">Choose a replacement</h2>'+D.filter(x=>x.c!='hotels'&&x.id!=cur).slice(0,12).map(x=>'<button class="card w-full p-2 my-1 text-left text-sm" onclick="doSwap('+d+','+s+','+x.id+')">'+x.e+' '+x.n+' — '+x.m+' MAD</button>').join(''))}
-function doSwap(d,s,id){S.plan[d][s]=id;closeM();render()}
-// ---- Match
-function score(p){const me=S.prof.hobbies.toLowerCase().split(/[ ,]+/).filter(Boolean);const sh=p.i.filter(i=>me.some(m=>i.includes(m)||m.includes(i)));return {pct:Math.min(98,70+sh.length*10+(Math.abs(p.bud-S.wiz.budget/S.wiz.days)<300?8:0)),sh}}
-function matchV(){const p=PEOPLE[S.deck%PEOPLE.length],sc=score(p);return '<h1 class="text-xl font-bold mb-2">🤝 Bawsala Match</h1><div id="sc" class="card overflow-hidden sw touch-pan-y" onpointerdown="sd(event)" onpointerup="su(event)"><div class="h-40 flex items-center justify-center text-7xl" style="background:linear-gradient(135deg,#0f6b52,#0f2b48)">'+['👩🏽','🧑🏼','👩🏻‍🦱','🧔🏽'][S.deck%4]+'</div><div class="p-4"><b class="text-lg">'+p.n+', '+p.a+'</b> <span class="text-sm opacity-80">from '+p.o+'</span><div class="text-sm">📅 '+p.d+' · 💰 ~'+p.bud+' MAD/day</div><p class="text-sm my-2">'+p.b+'</p><div class="chip">'+sc.pct+'% Match: '+(sc.sh.length?'shared '+sc.sh.join(', '):'similar budget and travel dates')+'</div></div></div><div class="flex justify-center gap-8 mt-4"><button class="text-4xl card w-16 h-16 !rounded-full" onclick="nextP(false)" title="'+t('pass')+'">❌</button><button class="text-4xl card w-16 h-16 !rounded-full" onclick="nextP(true)" title="'+t('conn')+'">💚</button></div><p class="text-center text-xs opacity-70 mt-2">Swipe the card or tap a button</p>'}
-let sx=0;function sd(e){sx=e.clientX}function su(e){const d=e.clientX-sx;if(Math.abs(d)>70)nextP(d>0)}
-function nextP(yes){const p=PEOPLE[S.deck%PEOPLE.length];S.deck++;if(yes){S.chat=[['them','Hi! I saw we both like '+p.b.split(',')[0].toLowerCase()+'. Want to do a workshop together?']];chatM(p)}else render()}
-function chatM(p){render();openM('<h2 class="font-bold">🎉 Match found! You and '+p.n+'</h2><div id="ch" class="my-2 space-y-1 text-sm"></div><div class="flex gap-2"><input id="ci" class="inp" placeholder="Message..."><button class="btn" onclick="send(\''+p.n+'\')">Send</button></div>');drawChat()}
-function drawChat(){$('#ch').innerHTML=S.chat.map(m=>'<div class="'+(m[0]=='me'?'text-right':'')+'"><span class="inline-block px-3 py-1 rounded-xl '+(m[0]=='me'?'bg-[#c8553d] text-white':'chip !text-inherit')+'">'+m[1]+'</span></div>').join('')}
-function send(n){const i=$('#ci'),v=i.value.trim();if(!v)return;S.chat.push(['me',v]);i.value='';drawChat();setTimeout(()=>{S.chat.push(['them',['Sounds great!','Pottery on Friday at 10?','Meet at Grand Socco?'][S.chat.length%3]]);if($('#ch'))drawChat()},900)}
-// ---- Profile
-function profV(){const p=S.prof;return '<h1 class="text-xl font-bold mb-2">👤 '+t('profile')+'</h1><div class="card p-4"><div class="text-center mb-3"><div class="w-20 h-20 rounded-full mx-auto bg-[#0f2b48] text-white text-3xl flex items-center justify-center overflow-hidden" id="av">'+(S.photo?'<img src="'+S.photo+'" class="w-full h-full object-cover">':(p.name[0]||'🙂'))+'</div><input type="file" accept="image/*" class="text-xs mt-2" onchange="photo(this)"></div><input class="inp mb-2" placeholder="Name" value="'+p.name+'" oninput="S.prof.name=this.value"><input class="inp mb-2" placeholder="Age" type="number" value="'+p.age+'" oninput="S.prof.age=this.value"><input class="inp mb-2" placeholder="Hobbies (history, photo, food, crafts...)" value="'+p.hobbies+'" oninput="S.prof.hobbies=this.value"><input class="inp mb-2" placeholder="Visited cities" value="'+p.cities+'" oninput="S.prof.cities=this.value"><select class="inp mb-2" onchange="S.prof.vibe=this.value"><option>Calm</option><option '+(p.vibe=='Adventure'?'selected':'')+'>Adventure</option></select><button class="btn w-full" onclick="saveP()">'+t('save')+'</button></div><p class="text-xs opacity-70 mt-2">Your hobbies tune the match scores. Data stays in this session only.</p>'}
-function photo(el){const f=el.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{S.photo=r.result;render()};r.readAsDataURL(f)}
-function saveP(){openM('<div class="text-center py-4"><div class="text-4xl">✅</div><p>Profile saved. Match scores are updated.</p></div>')}
-if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
-render();
-</script>
+
+<body class="bg-sand dark:bg-darknavy text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300 min-h-full flex flex-col">
+
+  <!-- App Header (Persistent) -->
+  <header class="sticky top-0 z-40 bg-navy text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <div class="flex items-center space-x-2 cursor-pointer" onclick="navigate('home')">
+        <div class="bg-navy border border-amber-400/40 px-3 py-1.5 rounded-xl flex items-center shadow-inner">
+          <span class="font-serif font-bold text-xl tracking-tight text-white">Ba</span>
+          <!-- Compass SVG replacing 'o' -->
+          <svg class="w-5 h-5 mx-0.5 text-mustard animate-spin-slow" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="10"/>
+            <polygon points="50,15 62,50 50,85 38,50" fill="#b8553a"/>
+            <polygon points="50,15 50,85 62,50" fill="#f5c518"/>
+          </svg>
+          <span class="font-serif font-bold text-xl tracking-tight text-white">sala</span>
+        </div>
+        <span class="text-xs font-arabic text-amber-300 font-medium hidden sm:inline-block">البوصلة - طنجة</span>
+      </div>
+
+      <!-- Header Action Controls -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <!-- Language Select Dropdown -->
+        <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-slate-800 text-xs sm:text-sm text-white rounded-lg px-2 py-1.5 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-400">
+          <option value="en">🇬🇧 EN</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="ar">🇲🇦 العربية</option>
+          <option value="es">🇪🇸 ES</option>
+        </select>
+
+        <!-- Notification Bell -->
+        <button onclick="toggleNotifModal(true)" class="relative p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition-colors" title="Notifications">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+          </svg>
+          <span id="notifBadge" class="absolute top-1 right-1 w-2.5 h-2.5 bg-terracotta rounded-full ring-2 ring-navy"></span>
+        </button>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition-colors" title="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <!-- About Us Button -->
+        <button onclick="toggleAboutModal(true)" class="p-2 rounded-lg bg-door-blue hover:bg-blue-700 text-white font-medium text-xs sm:text-sm flex items-center space-x-1" title="About Hackathon">
+          <span>🌍</span>
+          <span class="hidden md:inline" id="txt-about-btn">About Us</span>
+        </button>
+      </div>
+    </div>
+    <!-- Zellij Border Strip -->
+    <div class="zellij-strip w-full"></div>
+  </header>
+
+  <!-- Main Container Layout (Desktop Grid vs Mobile App Shell) -->
+  <div class="max-w-7xl w-full mx-auto flex-1 flex flex-col lg:flex-row pb-20 lg:pb-6">
+    
+    <!-- Desktop Sidebar Navigation (lg:block) -->
+    <aside class="hidden lg:block w-64 p-6 bg-white dark:bg-darkcard border-r border-slate-200 dark:border-slate-800 flex-shrink-0">
+      <div class="space-y-6 sticky top-24">
+        <div>
+          <h2 class="text-xs uppercase font-bold tracking-wider text-slate-400 mb-3" id="txt-nav-title">Navigation</h2>
+          <nav class="space-y-2">
+            <button onclick="navigate('home')" id="nav-d-home" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left font-semibold text-slate-700 dark:text-slate-200 hover:bg-sand dark:hover:bg-slate-800 transition">
+              <span class="text-xl">🏠</span>
+              <span id="lbl-d-home">Home</span>
+            </button>
+            <button onclick="navigate('explore')" id="nav-d-explore" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left font-semibold text-slate-700 dark:text-slate-200 hover:bg-sand dark:hover:bg-slate-800 transition">
+              <span class="text-xl">🗺️</span>
+              <span id="lbl-d-explore">Explore</span>
+            </button>
+            <button onclick="navigate('plan')" id="nav-d-plan" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left font-semibold text-slate-700 dark:text-slate-200 hover:bg-sand dark:hover:bg-slate-800 transition">
+              <span class="text-xl">🧭</span>
+              <span id="lbl-d-plan">My Plan</span>
+            </button>
+            <button onclick="navigate('match')" id="nav-d-match" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left font-semibold text-slate-700 dark:text-slate-200 hover:bg-sand dark:hover:bg-slate-800 transition">
+              <span class="text-xl">🤝</span>
+              <span id="lbl-d-match">Match</span>
+            </button>
+            <button onclick="navigate('profile')" id="nav-d-profile" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left font-semibold text-slate-700 dark:text-slate-200 hover:bg-sand dark:hover:bg-slate-800 transition">
+              <span class="text-xl">👤</span>
+              <span id="lbl-d-profile">Profile</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Desktop Chatbot Widget Button -->
+        <div class="pt-6 border-t border-slate-200 dark:border-slate-800">
+          <div class="bg-gradient-to-br from-navy to-door-blue rounded-2xl p-4 text-white text-center shadow-lg">
+            <div class="text-3xl mb-2">💬</div>
+            <h3 class="font-serif font-bold text-base" id="txt-sidebar-bot-title">Bawsala Assistant</h3>
+            <p class="text-xs text-slate-200 mt-1 mb-3" id="txt-sidebar-bot-sub">Ask local questions in real-time</p>
+            <button onclick="toggleChatbot(true)" class="w-full py-2 bg-amber-400 hover:bg-amber-300 text-navy font-bold rounded-xl text-xs transition">
+              Start Chat
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dynamic Content Area -->
+    <main id="mainContent" class="flex-1 p-4 sm:p-6 lg:p-8 max-w-full overflow-hidden">
+      <!-- Dynamic Views Rendered via JS -->
+    </main>
+
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-white/95 dark:bg-darkcard/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-2 py-2 flex justify-around items-center shadow-2xl">
+    <button onclick="navigate('home')" id="nav-m-home" class="flex flex-col items-center py-1 px-3 rounded-xl text-slate-600 dark:text-slate-300 font-medium">
+      <span class="text-xl">🏠</span>
+      <span class="text-[10px] mt-0.5" id="lbl-m-home">Home</span>
+    </button>
+    <button onclick="navigate('explore')" id="nav-m-explore" class="flex flex-col items-center py-1 px-3 rounded-xl text-slate-600 dark:text-slate-300 font-medium">
+      <span class="text-xl">🗺️</span>
+      <span class="text-[10px] mt-0.5" id="lbl-m-explore">Explore</span>
+    </button>
+    <button onclick="navigate('plan')" id="nav-m-plan" class="flex flex-col items-center py-1 px-3 rounded-xl text-slate-600 dark:text-slate-300 font-medium">
+      <span class="text-xl">🧭</span>
+      <span class="text-[10px] mt-0.5" id="lbl-m-plan">Plan</span>
+    </button>
+    <button onclick="navigate('match')" id="nav-m-match" class="flex flex-col items-center py-1 px-3 rounded-xl text-slate-600 dark:text-slate-300 font-medium">
+      <span class="text-xl">🤝</span>
+      <span class="text-[10px] mt-0.5" id="lbl-m-match">Match</span>
+    </button>
+    <button onclick="navigate('profile')" id="nav-m-profile" class="flex flex-col items-center py-1 px-3 rounded-xl text-slate-600 dark:text-slate-300 font-medium">
+      <span class="text-xl">👤</span>
+      <span class="text-[10px] mt-0.5" id="lbl-m-profile">Profile</span>
+    </button>
+  </nav>
+
+  <!-- Mobile Floating Chatbot FAB -->
+  <button onclick="toggleChatbot(true)" class="lg:hidden fixed bottom-16 right-4 z-30 w-12 h-12 bg-door-blue hover:bg-navy text-white rounded-full shadow-2xl flex items-center justify-center text-2xl border-2 border-white ring-2 ring-amber-400/50 transition-transform active:scale-95">
+    💬
+  </button>
+
+  <!-- NOTIFICATIONS MODAL -->
+  <div id="notifModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-darkcard rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 animate-fadeIn">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-200 dark:border-slate-800">
+        <h3 class="font-serif font-bold text-lg flex items-center gap-2">
+          <span>🔔</span> <span id="txt-notif-title">Notifications & Alerts</span>
+        </h3>
+        <button onclick="toggleNotifModal(false)" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
+      </div>
+      <div class="py-4 space-y-3">
+        <div class="p-3 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/50 rounded-xl flex gap-3">
+          <span class="text-xl">🎟️</span>
+          <div>
+            <p class="text-xs font-bold text-amber-900 dark:text-amber-200">20% off Tangier Kasbah Guided Tour</p>
+            <p class="text-[11px] text-amber-700 dark:text-amber-300">Valid this weekend for registered youth travelers.</p>
+          </div>
+        </div>
+        <div class="p-3 bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/50 rounded-xl flex gap-3">
+          <span class="text-xl">💖</span>
+          <div>
+            <p class="text-xs font-bold text-blue-900 dark:text-blue-200">Sofia from Madrid</p>
+            <p class="text-[11px] text-blue-700 dark:text-blue-300">Liked your Tangier itinerary plan!</p>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-200 dark:border-slate-800 space-y-3">
+          <div>
+            <label class="text-xs font-semibold text-slate-600 dark:text-slate-400 block mb-1" id="lbl-notif-pref">Notification Preferences</label>
+            <select id="notifPrefSelect" onchange="S.allowNotifs=this.value" class="w-full text-xs p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand dark:bg-slate-800">
+              <option value="all">Allow All Notifications</option>
+              <option value="promo">Promotions Only</option>
+              <option value="disabled">Notifications Disabled</option>
+            </select>
+          </div>
+          <div class="flex items-center justify-between pt-2">
+            <span class="text-xs font-medium" id="lbl-live-loc">Live Location Sync</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="liveLocToggle" checked onchange="S.liveLocation=this.checked" class="sr-only peer">
+              <div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-terracotta"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <button onclick="toggleNotifModal(false)" class="w-full py-2.5 bg-navy text-white rounded-xl text-xs font-bold mt-2">Close</button>
+    </div>
+  </div>
+
+  <!-- ABOUT US MODAL (Hackathon Badge + Team) -->
+  <div id="aboutModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white dark:bg-darkcard rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center pb-3 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-navy rounded-lg flex items-center justify-center text-amber-400 font-serif font-bold">B</div>
+          <h3 class="font-serif font-bold text-lg">Baosala البوصلة</h3>
+        </div>
+        <button onclick="toggleAboutModal(false)" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
+      </div>
+
+      <div class="py-4 space-y-4 text-xs sm:text-sm">
+        <!-- Badge -->
+        <div class="bg-gradient-to-r from-navy via-door-blue to-terracotta text-white p-3 rounded-xl text-center shadow">
+          <p class="font-arabic font-bold text-sm sm:text-base text-amber-300">
+            شبابنا سفراء التراث و الابتكار الثقافي - طنجة 2026
+          </p>
+          <p class="text-[11px] opacity-90 mt-0.5">Regional Youth Heritage & Cultural Hackathon · Tangier</p>
+        </div>
+
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-xs">
+          <strong>Mission:</strong> Five young creators from Tangier helping visitors experience the authentic culture, hidden artisan alleyways, and living heritage of the city through technology and community.
+        </p>
+
+        <!-- Team Grid -->
+        <h4 class="font-serif font-bold text-sm border-b pb-1 dark:border-slate-800 text-door-blue dark:text-amber-400">Our Team / فريق العمل</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+          <div class="p-2.5 rounded-xl bg-sand dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <p class="font-bold">💻 Mourtada</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Developer · App Architecture</p>
+          </div>
+          <div class="p-2.5 rounded-xl bg-sand dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <p class="font-bold">🎨 Moad</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Graphic Designer · Tangier Aesthetic</p>
+          </div>
+          <div class="p-2.5 rounded-xl bg-sand dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <p class="font-bold">📖 Afaf</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Storyteller · Cultural Narrative</p>
+          </div>
+          <div class="p-2.5 rounded-xl bg-sand dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <p class="font-bold">📸 Iman</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Content & Media · Local Photography</p>
+          </div>
+          <div class="p-2.5 rounded-xl bg-sand dark:bg-slate-800 border border-slate-200 dark:border-slate-700 sm:col-span-2">
+            <p class="font-bold">🤝 Badreddine</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Project & Community · Local Partnerships</p>
+          </div>
+        </div>
+
+        <div class="pt-2 text-xs text-slate-500 dark:text-slate-400 border-t dark:border-slate-800">
+          <p>📞 <strong>Phone:</strong> 0693069464</p>
+          <p>📧 <strong>Email:</strong> contact@baosala.ma</p>
+        </div>
+      </div>
+      <button onclick="toggleAboutModal(false)" class="w-full py-2 bg-door-blue text-white rounded-xl font-bold text-xs">Close</button>
+    </div>
+  </div>
+
+  <!-- BOOK DEMO WORKSHOP MODAL -->
+  <div id="demoModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-darkcard rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800">
+      <div class="flex justify-between items-center pb-3 border-b dark:border-slate-800">
+        <h3 class="font-serif font-bold text-base" id="demoModalTitle">Book Workshop Demo</h3>
+        <button onclick="toggleDemoModal(false)" class="text-slate-400 text-xl font-bold">&times;</button>
+      </div>
+      <div id="demoModalBody" class="py-4 space-y-3">
+        <!-- Form injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CHATBOT MODAL GUIDE -->
+  <div id="chatbotModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-darkcard rounded-2xl max-w-lg w-full h-[85vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+      <!-- Chat Header -->
+      <div class="bg-navy text-white p-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-amber-400 text-navy rounded-full flex items-center justify-center text-xl font-bold">
+            🧭
+          </div>
+          <div>
+            <h3 class="font-serif font-bold text-sm">Bawsala Guide / مرشد البوصلة</h3>
+            <p class="text-[11px] text-amber-200">Instant answers about Tangier</p>
+          </div>
+        </div>
+        <button onclick="toggleChatbot(false)" class="text-white hover:text-amber-300 text-2xl font-bold">&times;</button>
+      </div>
+
+      <!-- Quick Chips -->
+      <div class="bg-slate-100 dark:bg-slate-800/60 p-2 overflow-x-auto flex gap-2 border-b dark:border-slate-800">
+        <button onclick="sendQuickChat('mint tea')" class="px-2.5 py-1 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-full text-xs font-medium whitespace-nowrap shadow-sm hover:bg-amber-100">☕ Mint Tea</button>
+        <button onclick="sendQuickChat('kasbah')" class="px-2.5 py-1 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-full text-xs font-medium whitespace-nowrap shadow-sm hover:bg-amber-100">🏰 Kasbah</button>
+        <button onclick="sendQuickChat('hammam')" class="px-2.5 py-1 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-full text-xs font-medium whitespace-nowrap shadow-sm hover:bg-amber-100">🧖 Hammams</button>
+        <button onclick="sendQuickChat('day trips')" class="px-2.5 py-1 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-full text-xs font-medium whitespace-nowrap shadow-sm hover:bg-amber-100">⛰️ Day Trips</button>
+        <button onclick="sendQuickChat('etiquette')" class="px-2.5 py-1 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-full text-xs font-medium whitespace-nowrap shadow-sm hover:bg-amber-100">🤝 Etiquette</button>
+      </div>
+
+      <!-- Messages Stream -->
+      <div id="chatMessagesContainer" class="flex-1 p-4 overflow-y-auto space-y-3 bg-sand/40 dark:bg-darknavy/40">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Chat Input -->
+      <form onsubmit="handleChatSubmit(event)" class="p-3 bg-white dark:bg-darkcard border-t dark:border-slate-800 flex gap-2">
+        <input type="text" id="chatInput" placeholder="Ask anything about Tangier..." class="flex-1 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/50 dark:bg-slate-800 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-door-blue">
+        <button type="submit" class="px-4 py-2.5 bg-door-blue hover:bg-navy text-white font-bold rounded-xl text-xs transition">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    /* PWA Service Worker Registration */
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        const swCode = `
+          const CACHE_NAME = 'baosala-v1';
+          self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE_NAME)); });
+          self.addEventListener('fetch', e => {
+            e.respondWith(
+              fetch(e.request).catch(() => caches.match(e.request))
+            );
+          });
+        `;
+        const blob = new Blob([swCode], { type: 'application/javascript' });
+        navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
+      });
+    }
+
+    // Central Global State S
+    const S = {
+      lang: 'en',
+      darkMode: false,
+      activeTab: 'home',
+      searchQuery: '',
+      exploreCategory: null,
+      
+      // Modals
+      showNotifModal: false,
+      showAboutModal: false,
+      showChatbot: false,
+      showDemoModal: false,
+      demoTarget: null,
+      showSwapModal: false,
+      swapDayIdx: null,
+      swapStopIdx: null,
+      
+      // Notifications
+      notifRead: false,
+      allowNotifs: 'all',
+      liveLocation: true,
+
+      // Currency
+      currAmount: 100,
+      currType: 'USD',
+      currDirection: 'fromMAD',
+
+      // Plan Wizard & Generated Plan
+      planStep: 1,
+      planDays: 3,
+      planStartPoint: 'Tangier Port',
+      planInterests: ['artisan', 'food', 'viewpoints'],
+      planPace: 'slow',
+      planGuidance: 'self',
+      planVibes: ['heritage', 'authentic', 'cozy'],
+      planGroup: 'friends',
+      planTotalBudget: 2000,
+      planBudgetPercents: { food: 30, activities: 30, transport: 15, stay: 25 },
+      isGeneratingPlan: false,
+      generatedPlan: null,
+
+      // Chatbot History
+      chatMessages: [
+        { sender: 'bot', text: 'Marhaba! 👋 Welcome to Tangier! I am your Bawsala guide. Ask me about mint tea, hidden spots, hammams, day trips, or local etiquette!' }
+      ],
+
+      // Match State
+      matchIndex: 0,
+      matchChatOpen: false,
+      activeMatchProfile: null,
+
+      // Profile State
+      userProfile: {
+        name: 'Youssef El Amrani',
+        age: 27,
+        hobbies: 'Photography, Medina Walks, Artisanal Tea',
+        visitedCities: 'Marrakech, Chefchaouen, Fez',
+        vibe: 'authentic',
+        avatar: null
+      }
+    };
+
+    const T = {
+      en: {
+        tagline: "Discover Tangier Differently",
+        navHome: "Home", navExplore: "Explore", navPlan: "My Plan", navMatch: "Match", navProfile: "Profile",
+        searchPlaceholder: "Search Kasbah, Pottery, Tagine, Beach...",
+        noResults: "No places match your search.",
+        quickHeritage: "Heritage", quickArtisans: "Artisans", quickFood: "Local Food", quickTours: "Tours",
+        quickHotels: "Hotels", quickShopping: "Shopping", quickCurrency: "Currency", quickDarija: "Darija",
+        featuredArtisans: "Featured Artisan Workshops", bookDemo: "Book Demo Experience",
+        easiestWay: "Easiest Way:", openMap: "Open Map", MAD: "MAD"
+      },
+      fr: {
+        tagline: "Découvrez Tanger Différemment",
+        navHome: "Accueil", navExplore: "Explorer", navPlan: "Mon Plan", navMatch: "Rencontres", navProfile: "Profil",
+        searchPlaceholder: "Rechercher Kasbah, Poterie, Tagine...",
+        noResults: "Aucun endroit ne correspond à votre recherche.",
+        quickHeritage: "Patrimoine", quickArtisans: "Artisans", quickFood: "Cuisine", quickTours: "Tours",
+        quickHotels: "Hôtels", quickShopping: "Shopping", quickCurrency: "Devises", quickDarija: "Darija",
+        featuredArtisans: "Ateliers d'Artisans en Vedette", bookDemo: "Réserver la Démo",
+        easiestWay: "Trajet le plus simple:", openMap: "Ouvrir Carte", MAD: "MAD"
+      },
+      ar: {
+        tagline: "اكتشف طنجة بشكل مختلف",
+        navHome: "الرئيسية", navExplore: "استكشف", navPlan: "خطتي", navMatch: "رفقاء", navProfile: "الملف",
+        searchPlaceholder: "ابحث عن القصبة، الفخار، الطاجين، الشاطئ...",
+        noResults: "لم يتم العثور على نتائج.",
+        quickHeritage: "التراث", quickArtisans: "الصناعة التقليدية", quickFood: "المأكولات", quickTours: "الجولات",
+        quickHotels: "الفنادق", quickShopping: "التسوق", quickCurrency: "العملات", quickDarija: "الدارجة",
+        featuredArtisans: "ورشات الصناعة التقليدية المميزة", bookDemo: "حجز تجربة توضيحية",
+        easiestWay: "أسهل طريقة:", openMap: "فتح الخريطة", MAD: "درهم"
+      },
+      es: {
+        tagline: "Descubre Tánger de Forma Diferente",
+        navHome: "Inicio", navExplore: "Explorar", navPlan: "Mi Plan", navMatch: "Compañeros", navProfile: "Perfil",
+        searchPlaceholder: "Buscar Kasbah, Alfarería, Tajín...",
+        noResults: "No se encontraron lugares.",
+        quickHeritage: "Patrimonio", quickArtisans: "Artesanos", quickFood: "Gastronomía", quickTours: "Tours",
+        quickHotels: "Hoteles", quickShopping: "Compras", quickCurrency: "Moneda", quickDarija: "Darija",
+        featuredArtisans: "Talleres Artesanales Destacados", bookDemo: "Reservar Demo",
+        easiestWay: "Forma más fácil:", openMap: "Abrir Mapa", MAD: "MAD"
+      }
+    };
+
+    const PLACES_DATA = {
+      heritage: [
+        { name: "Kasbah Museum", rating: 4.7, price: "20 MAD", hours: "10:00-18:00", desc: "Sultan palace turned museum, built in the 17th century over Roman ruins.", way: "10-min walk through Kasbah alleys", cost: 20, slug: "kasbah-museum", icon: "🏛️" },
+        { name: "Cap Spartel", rating: 4.8, price: "Free", hours: "Open 24/7", desc: "Where the Atlantic meets the Mediterranean, featuring an iconic 1864 lighthouse.", way: "Petit Taxi from Grand Socco ~120 MAD round trip", cost: 60, slug: "cap-spartel", icon: "🌅" },
+        { name: "Hercules Caves", rating: 4.5, price: "10 MAD", hours: "09:00-20:00", desc: "Sea cave with an opening shaped like Africa, tied to Greek mythology.", way: "Grand Taxi shared from Cap Spartel ~15 MAD", cost: 10, slug: "hercules-caves", icon: "🦇" },
+        { name: "Grand Socco", rating: 4.4, price: "Free", hours: "Open 24/7", desc: "Lively square between old and new town, the iconic gateway to the Medina.", way: "5-min walk from Medina gate", cost: 0, slug: "grand-socco", icon: "🌆" },
+        { name: "American Legation", rating: 4.6, price: "Free", hours: "10:00-17:00", desc: "First US diplomatic property abroad, now a museum of Tangier international history.", way: "Walk 8 min from Petit Socco", cost: 0, slug: "american-legation", icon: "📜" },
+        { name: "Tangier Literary Walk", rating: 4.8, price: "120 MAD", hours: "2 Hours", desc: "Follow Paul Bowles, Beat writers and painters through the International Zone era.", way: "Meet at Petit Socco fountain", cost: 120, slug: "literary-walk", icon: "📚" },
+        { name: "Marshan Viewpoint", rating: 4.6, price: "Free", hours: "Open 24/7", desc: "Wide panoramic views over the Strait of Gibraltar and Medina rooftops.", way: "Petit Taxi ~15 MAD", cost: 0, slug: "marshan-viewpoint", icon: "🔭" }
+      ],
+      workshops: [
+        { name: "Pottery with Master Ahmed", rating: 4.9, price: "250 MAD", hours: "2.5 Hours", desc: "Spin the wheel and decorate your own clay piece with traditional glazes.", way: "Petit Taxi from Grand Socco ~15 MAD", cost: 250, slug: "pottery-ahmed", icon: "🏺" },
+        { name: "Leathercraft with Fatima", rating: 4.8, price: "300 MAD", hours: "3 Hours", desc: "Stitch your own babouches slippers or small leather pouch in old Medina.", way: "10-min walk through Medina alleys", cost: 300, slug: "leather-fatima", icon: "👞" },
+        { name: "Moroccan Weaving Masterclass", rating: 4.7, price: "220 MAD", hours: "2 Hours", desc: "Work a traditional wooden loom with a master weaver in fondouk.", way: "Walk 12 min from Grand Socco", cost: 220, slug: "weaving-class", icon: "🧶" },
+        { name: "Zellige Decor Workshop", rating: 4.9, price: "280 MAD", hours: "2.5 Hours", desc: "Hand-cut and set mosaic zellige tiles into a ceramic keepsake panel.", way: "Petit Taxi ~15 MAD", cost: 280, slug: "zellige-workshop", icon: "🎨" },
+        { name: "Cooking Class with Chef Amina", rating: 5.0, price: "400 MAD", hours: "4 Hours", desc: "Souk spice shopping, then prepare chicken lemon tagine and mint tea.", way: "Petit Taxi to Kasbah ~15 MAD", cost: 400, slug: "cooking-amina", icon: "🍲" }
+      ],
+      food: [
+        { name: "Tagine at Cafe Hafa Area", rating: 4.7, price: "~90 MAD", hours: "12:00-22:00", desc: "Slow-cooked beef and prune tagine with direct cliffside ocean views.", way: "Petit Taxi ~20 MAD", cost: 90, slug: "hafa-tagine", icon: "🥘" },
+        { name: "Seafood Pastilla", rating: 4.9, price: "~150 MAD", hours: "12:00-23:00", desc: "Crisp warqa pastry filled with spiced fresh fish, calamari and shrimp.", way: "Walk 7 min from Grand Socco", cost: 150, slug: "seafood-pastilla", icon: "🥧" },
+        { name: "Authentic Tangier Breakfast", rating: 4.6, price: "~45 MAD", hours: "07:00-12:00", desc: "Msemen flatbread, fresh goat cheese, olives, eggs with khlii and OJ.", way: "Walk in Medina alleyways", cost: 45, slug: "tangier-breakfast", icon: "🍳" },
+        { name: "Mint Tea Terrace", rating: 4.8, price: "~15 MAD", hours: "09:00-00:00", desc: "Fresh mint tea poured from high spouts with panoramic Strait views.", way: "Petit Taxi ~15 MAD", cost: 15, slug: "mint-tea-terrace", icon: "☕" },
+        { name: "Rooftop Sunset Terrace", rating: 4.7, price: "~70 MAD", hours: "16:00-23:00", desc: "Tea, Moroccan pastries and tapas above Medina rooftops at golden hour.", way: "10-min uphill walk from Grand Socco", cost: 70, slug: "rooftop-sunset", icon: "🌇" }
+      ],
+      tours: [
+        { name: "Guided Medina Walk", rating: 4.8, price: "150 MAD", hours: "2.5 Hours", desc: "Stories, hidden doorways, local bakeries and best panorama spots.", way: "Meet at Grand Socco central fountain", cost: 150, slug: "guided-medina-walk", icon: "🚶" },
+        { name: "Hop-On Hop-Off Bus", rating: 4.3, price: "130 MAD", hours: "All Day", desc: "Open-top double-decker bus covering main city landmarks.", way: "Starts at Tangier Port Terminal", cost: 130, slug: "hop-on-bus", icon: "🚌" },
+        { name: "Cap Spartel Horse Riding", rating: 4.6, price: "200 MAD", hours: "1.5 Hours", desc: "Sunset horse ride along Atlantic beach waves and pine forest.", way: "Petit Taxi ~120 MAD", cost: 200, slug: "horse-riding", icon: "🐎" },
+        { name: "Atlantic Beach Day", rating: 4.4, price: "Free", hours: "All Day", desc: "Sun, surf lesson options and oceanfront grilled sardines.", way: "Local bus 2 MAD / Taxi ~25 MAD", cost: 40, slug: "atlantic-beach", icon: "🏖️" },
+        { name: "Traditional Hammam Ritual", rating: 4.7, price: "200 MAD", hours: "10:00-20:00", desc: "Steam, black soap exfoliation and kessa scrub in neighborhood bathhouse.", way: "Walk from Petit Socco 5 min", cost: 200, slug: "traditional-hammam", icon: "🧖" },
+        { name: "Day Trip to Chefchaouen", rating: 4.9, price: "450 MAD", hours: "Full Day", desc: "Explore the famous blue mountain town, ~2.5h scenic drive.", way: "Shared Grand Taxi or bus from station", cost: 450, slug: "chefchaouen-trip", icon: "🚙" },
+        { name: "Day Trip to Asilah", rating: 4.6, price: "200 MAD", hours: "Half Day", desc: "Whitewashed seaside art town known for street murals, 45 km south.", way: "Train or Grand Taxi", cost: 200, slug: "asilah-trip", icon: "🖼️" }
+      ],
+      hotels: [
+        { name: "Riad Kasbah Blue", rating: 4.8, price: "750 MAD / 70 EUR", hours: "Check-in 14:00", desc: "Luxury riad with rooftop pool and Strait views. Wi-Fi, breakfast, spa included.", way: "Petit Taxi from port ~20 MAD", cost: 750, slug: "riad-kasbah-blue", icon: "🏨" },
+        { name: "Boutique Medina Stay", rating: 4.5, price: "420 MAD / 39 EUR", hours: "Check-in 15:00", desc: "Charming boutique hotel in the heart of Medina. Wi-Fi, AC, scenic terrace.", way: "Walk from Grand Socco 6 min", cost: 420, slug: "boutique-medina", icon: "🛌" },
+        { name: "Budget Hostel Tanja", rating: 4.2, price: "130 MAD / 12 EUR", hours: "Check-in 13:00", desc: "Clean, vibrant social hostel. Wi-Fi, communal kitchen, rooftop lounge.", way: "Walk from train station 15 min", cost: 130, slug: "hostel-tanja", icon: "🎒" }
+      ],
+      shopping: [
+        { name: "Lantern and Brass Souk", rating: 4.5, price: "from 80 MAD", hours: "09:00-20:00", desc: "Hand-hammered brass lamps and trays. Polite bargaining welcome.", way: "Walk through Rue es-Siaghin", cost: 80, slug: "brass-souk", icon: "🏮" },
+        { name: "Cooperative Carpets", rating: 4.7, price: "from 400 MAD", hours: "10:00-19:00", desc: "Authentic Berber rugs sold directly by local women weaving cooperatives.", way: "Petit Taxi ~15 MAD", cost: 400, slug: "carpet-coop", icon: "🪡" },
+        { name: "Spice and Argan Corner", rating: 4.6, price: "from 40 MAD", hours: "09:00-21:00", desc: "Pure argan oil, saffron, rose water, and custom tea blends by weight.", way: "2-min walk from Petit Socco", cost: 40, slug: "spice-corner", icon: "🌿" }
+      ]
+    };
+
+    const MATCH_PROFILES = [
+      { id: 1, name: "Sofia", age: 27, origin: "Madrid, Spain", dates: "Oct 12 - Oct 16", bio: "Art history researcher eager to explore Beat generation cafes and pottery studios.", budget: 450, group: "friends", interests: ['artisan', 'food', 'viewpoints'], vibes: ['heritage', 'cozy', 'authentic'], initial: "S", color: "bg-amber-500" },
+      { id: 2, name: "Liam", age: 31, origin: "Dublin, Ireland", dates: "Oct 14 - Oct 18", bio: "Photographer fascinated by Cap Spartel sunsets and Medina doorways.", budget: 550, group: "solo", interests: ['viewpoints', 'daytrips', 'food'], vibes: ['adventure', 'authentic', 'heritage'], initial: "L", color: "bg-blue-600" },
+      { id: 3, name: "Yara", age: 25, origin: "Beirut, Lebanon", dates: "Oct 10 - Oct 15", bio: "Foodie looking to take cooking classes and explore rooftop mint tea spots.", budget: 400, group: "friends", interests: ['food', 'artisan', 'rooftops'], vibes: ['cozy', 'authentic', 'heritage'], initial: "Y", color: "bg-emerald-600" },
+      { id: 4, name: "Noah", age: 29, origin: "Lyon, France", dates: "Oct 15 - Oct 20", bio: "Backpacker visiting Hercules Caves and planning a day trip to Chefchaouen.", budget: 300, group: "solo", interests: ['daytrips', 'viewpoints', 'hammam'], vibes: ['adventure', 'authentic'], initial: "N", color: "bg-terracotta" },
+      { id: 5, name: "Amine", age: 26, origin: "Casablanca, Morocco", dates: "Oct 11 - Oct 14", bio: "Local traveler passionate about Moroccan crafts, zellige tiles and traditional hammam.", budget: 380, group: "friends", interests: ['artisan', 'hammam', 'food'], vibes: ['authentic', 'heritage'], initial: "A", color: "bg-door-blue" },
+      { id: 6, name: "Lucia", age: 28, origin: "Valencia, Spain", dates: "Oct 13 - Oct 17", bio: "Loves coastal hikes, Cap Spartel, seafood pastilla and rooftop views.", budget: 500, group: "friends", interests: ['viewpoints', 'food', 'rooftops'], vibes: ['cozy', 'authentic', 'adventure'], initial: "L", color: "bg-amber-600" },
+      { id: 7, name: "Karim", age: 30, origin: "Paris, France", dates: "Oct 12 - Oct 16", bio: "Architect seeking historic riads, Kasbah architecture and leathercraft.", budget: 600, group: "friends", interests: ['artisan', 'viewpoints', 'food'], vibes: ['heritage', 'cozy'], initial: "K", color: "bg-navy" },
+      { id: 8, name: "Hanna", age: 24, origin: "Berlin, Germany", dates: "Oct 14 - Oct 19", bio: "Solo traveler doing literary walks, visiting Cafe Hafa and taking photos.", budget: 320, group: "solo", interests: ['literary', 'rooftops', 'viewpoints'], vibes: ['authentic', 'cozy'], initial: "H", color: "bg-rose-500" },
+      { id: 9, name: "Omar", age: 32, origin: "Rabat, Morocco", dates: "Oct 11 - Oct 15", bio: "Culture enthusiast organizing day trips to Asilah and Chefchaouen.", budget: 450, group: "friends", interests: ['daytrips', 'food', 'artisan'], vibes: ['heritage', 'adventure'], initial: "O", color: "bg-teal-600" },
+      { id: 10, name: "Chloe", age: 26, origin: "Bristol, UK", dates: "Oct 15 - Oct 18", bio: "Looking for weaving workshops, spice markets and sunset tea.", budget: 420, group: "friends", interests: ['artisan', 'rooftops', 'food'], vibes: ['authentic', 'cozy'], initial: "C", color: "bg-purple-600" },
+      { id: 11, name: "Sara", age: 23, origin: "Tetouan, Morocco", dates: "Oct 10 - Oct 13", bio: "Student exploring local food, hammams and craft workshops with friends.", budget: 250, group: "friends", interests: ['food', 'hammam', 'artisan'], vibes: ['authentic', 'cozy'], initial: "S", color: "bg-emerald-500" },
+      { id: 12, name: "Diego", age: 30, origin: "Seville, Spain", dates: "Oct 13 - Oct 17", bio: "Digital nomad discovering seafood spots and coastal trails around Cap Spartel.", budget: 500, group: "solo", interests: ['viewpoints', 'food', 'daytrips'], vibes: ['adventure', 'cozy'], initial: "D", color: "bg-indigo-600" }
+    ];
+
+    const DARIJA_PHRASES = [
+      { cat: "Greetings", en: "Hello", darija: "Salam", ar: "سلام" },
+      { cat: "Greetings", en: "Thank you", darija: "Choukran", ar: "شكرا" },
+      { cat: "Greetings", en: "Good morning", darija: "Sbah lkhir", ar: "صباح الخير" },
+      { cat: "Shopping", en: "How much is this?", darija: "Bchhal hada?", ar: "بشحال هادا؟" },
+      { cat: "Shopping", en: "Too expensive", darija: "Ghali bzaf", ar: "غالي بزاف" },
+      { cat: "Shopping", en: "Lower the price please", darija: "Nقص chwiya afak", ar: "نقص شوية عفاك" },
+      { cat: "Dining", en: "The bill please", darija: "L7ssab afak", ar: "الحساب عفاك" },
+      { cat: "Dining", en: "Water, please", darija: "Ma afak", ar: "الماء عفاك" },
+      { cat: "Dining", en: "Very delicious!", darija: "Ldid bzaf!", ar: "لذيذ بزاف!" },
+      { cat: "Emergency", en: "I need help", darija: "Bghit mosaada", ar: "بغيت مساعدة" },
+      { cat: "Emergency", en: "Call the police", darija: "3ayet 3la lboulis", ar: "عيط على البوليس" },
+      { cat: "Directions", en: "Where is the Medina?", darija: "Fin kayna lmdina?", ar: "فين كاينة المدينة؟" },
+      { cat: "Directions", en: "Where is the bathroom?", darija: "Fin kayn toilet?", ar: "فين كاين تواليت؟" }
+    ];
+
+    function navigate(tab) {
+      S.activeTab = tab;
+      S.searchQuery = '';
+      
+      // Update UI active tab button styles
+      const tabs = ['home', 'explore', 'plan', 'match', 'profile'];
+      tabs.forEach(t => {
+        const mBtn = document.getElementById(`nav-m-${t}`);
+        const dBtn = document.getElementById(`nav-d-${t}`);
+        const isActive = (t === tab);
+        
+        if (mBtn) {
+          mBtn.className = isActive 
+            ? "flex flex-col items-center py-1 px-3 rounded-xl text-terracotta font-bold dark:text-amber-400 bg-sand/60 dark:bg-slate-800"
+            : "flex flex-col items-center py-1 px-3 rounded-xl text-slate-600 dark:text-slate-300 font-medium";
+        }
+        if (dBtn) {
+          dBtn.className = isActive
+            ? "w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left font-bold bg-navy text-white shadow-md"
+            : "w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left font-semibold text-slate-700 dark:text-slate-200 hover:bg-sand dark:hover:bg-slate-800 transition";
+        }
+      });
+
+      renderMainContent();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function changeLanguage(lang) {
+      S.lang = lang;
+      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+      
+      // Update UI label texts
+      const t = T[lang] || T.en;
+      document.getElementById('lbl-m-home').innerText = t.navHome;
+      document.getElementById('lbl-m-explore').innerText = t.navExplore;
+      document.getElementById('lbl-m-plan').innerText = t.navPlan;
+      document.getElementById('lbl-m-match').innerText = t.navMatch;
+      document.getElementById('lbl-m-profile').innerText = t.navProfile;
+
+      document.getElementById('lbl-d-home').innerText = t.navHome;
+      document.getElementById('lbl-d-explore').innerText = t.navExplore;
+      document.getElementById('lbl-d-plan').innerText = t.navPlan;
+      document.getElementById('lbl-d-match').innerText = t.navMatch;
+      document.getElementById('lbl-d-profile').innerText = t.navProfile;
+
+      renderMainContent();
+    }
+
+    function toggleTheme() {
+      S.darkMode = !S.darkMode;
+      if (S.darkMode) {
+        document.documentElement.classList.add('dark');
+        document.getElementById('themeIcon').innerText = '☀️';
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.getElementById('themeIcon').innerText = '🌙';
+      }
+    }
+
+    function toggleNotifModal(show) {
+      S.showNotifModal = show;
+      const m = document.getElementById('notifModal');
+      if (show) {
+        m.classList.remove('hidden');
+        document.getElementById('notifBadge').classList.add('hidden');
+        S.notifRead = true;
+      } else {
+        m.classList.add('hidden');
+      }
+    }
+
+    function toggleAboutModal(show) {
+      S.showAboutModal = show;
+      const m = document.getElementById('aboutModal');
+      if (show) m.classList.remove('hidden');
+      else m.classList.add('hidden');
+    }
+
+    function toggleChatbot(show) {
+      S.showChatbot = show;
+      const m = document.getElementById('chatbotModal');
+      if (show) {
+        m.classList.remove('hidden');
+        renderChatMessages();
+      } else {
+        m.classList.add('hidden');
+      }
+    }
+
+    function renderMainContent() {
+      const main = document.getElementById('mainContent');
+      if (S.activeTab === 'home') {
+        renderHomeView(main);
+      } else if (S.activeTab === 'explore') {
+        renderExploreView(main);
+      } else if (S.activeTab === 'plan') {
+        renderPlanView(main);
+      } else if (S.activeTab === 'match') {
+        renderMatchView(main);
+      } else if (S.activeTab === 'profile') {
+        renderProfileView(main);
+      }
+    }
+
+    let heroTimer = null;
+    let heroIndex = 0;
+
+    function renderHomeView(container) {
+      const t = T[S.lang] || T.en;
+      
+      container.innerHTML = `
+        <div class="space-y-6">
+          <!-- Hero Slideshow Container -->
+          <div class="relative w-full h-52 sm:h-64 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-r from-navy via-door-blue to-darknavy text-white flex items-center p-6">
+            <div id="heroBg" class="absolute inset-0 bg-cover bg-center transition-all duration-1000 transform scale-105" style="background-image: linear-gradient(to right, rgba(15,43,72,0.85), rgba(15,43,72,0.4)), url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80')"></div>
+            
+            <div class="relative z-10 max-w-xl space-y-2">
+              <span class="text-xs uppercase tracking-widest font-bold text-amber-300 font-arabic">طنجة · Tanger · Tangier</span>
+              <h1 class="font-serif font-bold text-2xl sm:text-3xl lg:text-4xl leading-tight text-amber-100">
+                ${t.tagline}
+              </h1>
+              <p class="text-xs sm:text-sm text-slate-200">
+                Authentic heritage, master artisans, coastal views & youth traveler matching.
+              </p>
+            </div>
+          </div>
+
+          <!-- Instant Search Input -->
+          <div class="relative">
+            <input type="text" id="homeSearchInput" value="${S.searchQuery}" oninput="handleSearchInput(this.value)" placeholder="${t.searchPlaceholder}" class="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-white dark:bg-darkcard border border-slate-200 dark:border-slate-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-door-blue text-sm">
+            <span class="absolute left-4 top-3.5 text-lg text-slate-400">🔍</span>
+          </div>
+
+          <!-- Search Results Container OR Standard Home Dashboard -->
+          <div id="homeMainArea" class="space-y-6">
+            ${S.searchQuery.trim().length > 0 ? getSearchResultsHTML() : getStandardHomeHTML(t)}
+          </div>
+        </div>
+      `;
+
+      startHeroSlideshow();
+    }
+
+    function startHeroSlideshow() {
+      if (heroTimer) clearInterval(heroTimer);
+      const images = [
+        'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1579282240050-352db0a14c21?auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1000&q=80'
+      ];
+      heroIndex = 0;
+      heroTimer = setInterval(() => {
+        heroIndex = (heroIndex + 1) % images.length;
+        const bg = document.getElementById('heroBg');
+        if (bg) {
+          bg.style.backgroundImage = `linear-gradient(to right, rgba(15,43,72,0.85), rgba(15,43,72,0.4)), url('${images[heroIndex]}')`;
+        }
+      }, 3500);
+    }
+
+    function handleSearchInput(val) {
+      S.searchQuery = val;
+      const area = document.getElementById('homeMainArea');
+      if (area) {
+        if (val.trim().length > 0) {
+          area.innerHTML = getSearchResultsHTML();
+        } else {
+          area.innerHTML = getStandardHomeHTML(T[S.lang] || T.en);
+        }
+      }
+    }
+
+    function getStandardHomeHTML(t) {
+      return `
+        <!-- Quick Access 8 Tiles Grid -->
+        <div>
+          <h2 class="font-serif font-bold text-lg mb-3 text-navy dark:text-amber-400">Quick Access / وصول سريع</h2>
+          <div class="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 sm:gap-3">
+            <button onclick="openCategory('heritage')" class="p-3 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center hover:border-door-blue transition shadow-sm text-center">
+              <span class="text-2xl mb-1">🏛️</span>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 truncate w-full">${t.quickHeritage}</span>
+            </button>
+            <button onclick="openCategory('workshops')" class="p-3 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center hover:border-door-blue transition shadow-sm text-center">
+              <span class="text-2xl mb-1">🏺</span>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 truncate w-full">${t.quickArtisans}</span>
+            </button>
+            <button onclick="openCategory('food')" class="p-3 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center hover:border-door-blue transition shadow-sm text-center">
+              <span class="text-2xl mb-1">🍲</span>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 truncate w-full">${t.quickFood}</span>
+            </button>
+            <button onclick="openCategory('tours')" class="p-3 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center hover:border-door-blue transition shadow-sm text-center">
+              <span class="text-2xl mb-1">🧭</span>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 truncate w-full">${t.quickTours}</span>
+            </button>
+            <button onclick="openCategory('hotels')" class="p-3 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center hover:border-door-blue transition shadow-sm text-center">
+              <span class="text-2xl mb-1">🏨</span>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 truncate w-full">${t.quickHotels}</span>
+            </button>
+            <button onclick="openCategory('shopping')" class="p-3 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center hover:border-door-blue transition shadow-sm text-center">
+              <span class="text-2xl mb-1">🛍️</span>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 truncate w-full">${t.quickShopping}</span>
+            </button>
+            <button onclick="openCategory('currency')" class="p-3 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center hover:border-door-blue transition shadow-sm text-center">
+              <span class="text-2xl mb-1">💱</span>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 truncate w-full">${t.quickCurrency}</span>
+            </button>
+            <button onclick="openCategory('translator')" class="p-3 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center hover:border-door-blue transition shadow-sm text-center">
+              <span class="text-2xl mb-1">🗣️</span>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 truncate w-full">${t.quickDarija}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Featured Artisan Experiences (Horizontal Scroll) -->
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <h2 class="font-serif font-bold text-lg text-navy dark:text-amber-400">${t.featuredArtisans}</h2>
+            <button onclick="openCategory('workshops')" class="text-xs text-door-blue font-bold hover:underline">View All &rarr;</button>
+          </div>
+          <div class="flex gap-4 overflow-x-auto pb-3 -mx-2 px-2 snap-x">
+            ${PLACES_DATA.workshops.map(w => `
+              <div class="min-w-[260px] sm:min-w-[300px] bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 p-4 shadow-md flex-shrink-0 snap-start flex flex-col justify-between">
+                <div>
+                  <div class="arch-image h-36 bg-slate-200 dark:bg-slate-800 mb-3 relative">
+                    <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=500&q=80" alt="${w.name}" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-4xl bg-amber-100 dark:bg-slate-800\'>${w.icon}</div>'">
+                    <span class="absolute top-2 right-2 bg-black/60 text-amber-300 px-2 py-0.5 rounded-full text-xs font-bold">⭐ ${w.rating}</span>
+                  </div>
+                  <h3 class="font-bold text-sm text-slate-800 dark:text-slate-100">${w.name}</h3>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mt-1">${w.desc}</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                  <span class="text-xs font-bold text-terracotta">${w.price}</span>
+                  <button onclick="openDemoBooking('${w.name}')" class="px-3 py-1.5 bg-door-blue text-white rounded-xl text-xs font-bold hover:bg-navy transition">
+                    ${t.bookDemo}
+                  </button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function getSearchResultsHTML() {
+      const q = S.searchQuery.toLowerCase().trim();
+      let matches = [];
+
+      Object.keys(PLACES_DATA).forEach(cat => {
+        PLACES_DATA[cat].forEach(item => {
+          if (item.name.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q)) {
+            matches.push({ ...item, category: cat });
+          }
+        });
+      });
+
+      if (matches.length === 0) {
+        return `<div class="p-8 text-center text-slate-500 dark:text-slate-400">${T[S.lang].noResults}</div>`;
+      }
+
+      return `
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          ${matches.map(item => renderPlaceCard(item)).join('')}
+        </div>
+      `;
+    }
+
+    function openCategory(cat) {
+      S.activeTab = 'explore';
+      S.exploreCategory = cat;
+      renderMainContent();
+    }
+
+    function renderExploreView(container) {
+      const cat = S.exploreCategory;
+
+      if (!cat) {
+        // Show Category Selection Grid
+        container.innerHTML = `
+          <div class="space-y-4">
+            <h1 class="font-serif font-bold text-2xl text-navy dark:text-amber-400">Explore Tangier / استكشف طنجة</h1>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Select a category to discover curated heritage, food, workshops and tools.</p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              <button onclick="openCategory('heritage')" class="p-5 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-door-blue transition shadow-md text-left group">
+                <span class="text-3xl block mb-2 group-hover:scale-110 transition-transform">🏛️</span>
+                <h3 class="font-bold text-sm text-navy dark:text-amber-300">Heritage</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Museums & Capes</p>
+              </button>
+              <button onclick="openCategory('workshops')" class="p-5 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-door-blue transition shadow-md text-left group">
+                <span class="text-3xl block mb-2 group-hover:scale-110 transition-transform">🏺</span>
+                <h3 class="font-bold text-sm text-navy dark:text-amber-300">Artisans</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Pottery & Leather</p>
+              </button>
+              <button onclick="openCategory('food')" class="p-5 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-door-blue transition shadow-md text-left group">
+                <span class="text-3xl block mb-2 group-hover:scale-110 transition-transform">🍲</span>
+                <h3 class="font-bold text-sm text-navy dark:text-amber-300">Local Food</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Tagine & Pastilla</p>
+              </button>
+              <button onclick="openCategory('tours')" class="p-5 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-door-blue transition shadow-md text-left group">
+                <span class="text-3xl block mb-2 group-hover:scale-110 transition-transform">🧭</span>
+                <h3 class="font-bold text-sm text-navy dark:text-amber-300">Tours & Trips</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Day Trips & Baths</p>
+              </button>
+              <button onclick="openCategory('hotels')" class="p-5 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-door-blue transition shadow-md text-left group">
+                <span class="text-3xl block mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                <h3 class="font-bold text-sm text-navy dark:text-amber-300">Hotels</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Riads & Hostels</p>
+              </button>
+              <button onclick="openCategory('shopping')" class="p-5 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-door-blue transition shadow-md text-left group">
+                <span class="text-3xl block mb-2 group-hover:scale-110 transition-transform">🛍️</span>
+                <h3 class="font-bold text-sm text-navy dark:text-amber-300">Shopping</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Souks & Carpets</p>
+              </button>
+              <button onclick="openCategory('currency')" class="p-5 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-door-blue transition shadow-md text-left group">
+                <span class="text-3xl block mb-2 group-hover:scale-110 transition-transform">💱</span>
+                <h3 class="font-bold text-sm text-navy dark:text-amber-300">Currency</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">MAD Conversion</p>
+              </button>
+              <button onclick="openCategory('translator')" class="p-5 bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-door-blue transition shadow-md text-left group">
+                <span class="text-3xl block mb-2 group-hover:scale-110 transition-transform">🗣️</span>
+                <h3 class="font-bold text-sm text-navy dark:text-amber-300">Darija Voice</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Phrasebook & Mic</p>
+              </button>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // Handle Utility Tool Views (Currency / Translator)
+      if (cat === 'currency') {
+        renderCurrencyView(container);
+        return;
+      }
+      if (cat === 'translator') {
+        renderTranslatorView(container);
+        return;
+      }
+
+      // Render Category Place Cards List
+      const items = PLACES_DATA[cat] || [];
+      container.innerHTML = `
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <button onclick="S.exploreCategory=null; renderMainContent();" class="px-3 py-1.5 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl text-xs font-bold hover:bg-slate-300">
+              ← Back to Categories
+            </button>
+            <span class="text-xs uppercase font-bold text-terracotta tracking-wider">${cat}</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            ${items.map(item => renderPlaceCard(item)).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPlaceCard(item) {
+      const isWorkshop = S.exploreCategory === 'workshops';
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.name + ' Tangier')}`;
+
+      return `
+        <div class="bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 p-4 shadow-md flex flex-col justify-between">
+          <div>
+            <!-- Moroccan Arch-shaped top image -->
+            <div class="arch-image h-40 bg-slate-200 dark:bg-slate-800 mb-3 relative">
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=500&q=80" alt="${item.name}" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-5xl bg-amber-100 dark:bg-slate-800\'>${item.icon || '📍'}</div>'">
+              <span class="absolute top-2 right-2 bg-black/70 text-amber-300 px-2.5 py-0.5 rounded-full text-xs font-bold">⭐ ${item.rating}</span>
+            </div>
+
+            <h3 class="font-bold text-base text-slate-800 dark:text-slate-100">${item.name}</h3>
+            <div class="flex items-center space-x-2 text-xs text-slate-500 dark:text-slate-400 mt-1">
+              <span>🕒 ${item.hours}</span>
+              <span>•</span>
+              <span class="font-semibold text-terracotta">${item.price}</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">${item.desc}</p>
+
+            <!-- Easiest Way Transport Badge (Terracotta left border) -->
+            <div class="mt-3 p-2.5 bg-amber-50/70 dark:bg-slate-800/80 border-l-4 border-terracotta rounded-r-xl text-[11px] text-slate-700 dark:text-slate-300">
+              <strong class="text-terracotta">Easiest way:</strong> ${item.way}
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center gap-2">
+            <a href="${mapsUrl}" target="_blank" class="flex-1 text-center py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl text-xs font-bold hover:bg-slate-200 transition">
+              📍 Open Map
+            </a>
+            ${isWorkshop ? `
+              <button onclick="openDemoBooking('${item.name}')" class="flex-1 py-2 bg-door-blue text-white rounded-xl text-xs font-bold hover:bg-navy transition">
+                Book Demo
+              </button>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderCurrencyView(container) {
+      const dir = S.currDirection;
+      const rates = { USD: 0.10, EUR: 0.092, GBP: 0.079, SAR: 0.375 };
+      const rate = rates[S.currType] || 0.10;
+      let result = 0;
+
+      if (dir === 'fromMAD') {
+        result = (S.currAmount * rate).toFixed(2);
+      } else {
+        result = (S.currAmount / rate).toFixed(2);
+      }
+
+      container.innerHTML = `
+        <div class="max-w-md mx-auto bg-white dark:bg-darkcard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+          <div class="flex items-center justify-between">
+            <button onclick="S.exploreCategory=null; renderMainContent();" class="text-xs font-bold text-door-blue">← Back</button>
+            <h2 class="font-serif font-bold text-lg">💱 Currency Converter</h2>
+          </div>
+
+          <div class="space-y-3">
+            <div>
+              <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Direction</label>
+              <select onchange="S.currDirection=this.value; renderMainContent();" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand dark:bg-slate-800 text-xs font-bold">
+                <option value="fromMAD" ${dir === 'fromMAD' ? 'selected' : ''}>MAD ➔ Foreign Currency</option>
+                <option value="toMAD" ${dir === 'toMAD' ? 'selected' : ''}>Foreign Currency ➔ MAD</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Amount</label>
+                <input type="number" value="${S.currAmount}" oninput="S.currAmount=parseFloat(this.value)||0; renderMainContent();" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand dark:bg-slate-800 text-xs font-bold">
+              </div>
+              <div>
+                <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Target Currency</label>
+                <select onchange="S.currType=this.value; renderMainContent();" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand dark:bg-slate-800 text-xs font-bold">
+                  <option value="USD" ${S.currType === 'USD' ? 'selected' : ''}>USD ($)</option>
+                  <option value="EUR" ${S.currType === 'EUR' ? 'selected' : ''}>EUR (€)</option>
+                  <option value="GBP" ${S.currType === 'GBP' ? 'selected' : ''}>GBP (£)</option>
+                  <option value="SAR" ${S.currType === 'SAR' ? 'selected' : ''}>SAR (ر.س)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Conversion Result Box -->
+            <div class="p-4 bg-amber-50 dark:bg-slate-800 border border-amber-200 dark:border-slate-700 rounded-2xl text-center">
+              <span class="text-xs text-slate-500 uppercase font-bold">Converted Amount</span>
+              <p class="text-2xl font-serif font-bold text-terracotta mt-1">
+                ${dir === 'fromMAD' ? `${result} ${S.currType}` : `${result} MAD`}
+              </p>
+              <p class="text-[10px] text-slate-400 mt-1">Sample rate: 1 MAD = ${rate} ${S.currType}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderTranslatorView(container) {
+      container.innerHTML = `
+        <div class="max-w-lg mx-auto bg-white dark:bg-darkcard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+          <div class="flex items-center justify-between">
+            <button onclick="S.exploreCategory=null; renderMainContent();" class="text-xs font-bold text-door-blue">← Back</button>
+            <h2 class="font-serif font-bold text-lg">🗣️ Darija Translator</h2>
+          </div>
+
+          <!-- Speech Recognition Mic Button -->
+          <div class="p-4 bg-gradient-to-r from-navy to-door-blue rounded-2xl text-white flex items-center justify-between">
+            <div>
+              <p class="font-bold text-xs">Speak English Phrase</p>
+              <p class="text-[11px] text-amber-200">Translates directly to Darija</p>
+            </div>
+            <button onclick="startVoiceRecognition()" class="p-3 bg-amber-400 hover:bg-amber-300 text-navy rounded-full text-xl shadow-lg transition active:scale-95">
+              🎙️
+            </button>
+          </div>
+          <div id="voiceResultBox" class="hidden p-3 bg-emerald-50 dark:bg-emerald-950/40 text-xs rounded-xl text-emerald-800 dark:text-emerald-200"></div>
+
+          <!-- Phrasebook Accordion / List -->
+          <div class="space-y-2">
+            ${DARIJA_PHRASES.map(p => `
+              <div class="p-3 bg-sand/60 dark:bg-slate-800/80 rounded-xl flex items-center justify-between border border-slate-200/60 dark:border-slate-700/60">
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-terracotta">${p.cat}</span>
+                  <p class="font-bold text-xs text-slate-800 dark:text-slate-100">${p.en}</p>
+                  <p class="text-xs text-door-blue dark:text-amber-300">${p.darija} <span class="font-arabic font-medium">(${p.ar})</span></p>
+                </div>
+                <button onclick="speakText('${p.ar}')" class="p-2 bg-white dark:bg-slate-700 rounded-full shadow hover:bg-amber-100 text-sm">
+                  🔊
+                </button>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'ar-MA';
+        window.speechSynthesis.speak(u);
+      }
+    }
+
+    function startVoiceRecognition() {
+      const resBox = document.getElementById('voiceResultBox');
+      if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        resBox.classList.remove('hidden');
+        resBox.innerText = "Speech recognition is not supported in this browser.";
+        return;
+      }
+
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const rec = new SpeechRecognition();
+      rec.lang = 'en-US';
+      
+      resBox.classList.remove('hidden');
+      resBox.innerText = "Listening... Speak an English phrase (e.g. 'Hello', 'Water please')";
+
+      rec.onresult = (e) => {
+        const spoken = e.results[0][0].transcript.toLowerCase();
+        const found = DARIJA_PHRASES.find(p => spoken.includes(p.en.toLowerCase()));
+        if (found) {
+          resBox.innerHTML = `<strong>Matched:</strong> "${found.en}" ➔ <strong>${found.darija}</strong> (${found.ar})`;
+          speakText(found.ar);
+        } else {
+          resBox.innerText = `Heard: "${spoken}". No direct match found in phrasebook.`;
+        }
+      };
+
+      rec.onerror = () => {
+        resBox.innerText = "Microphone access blocked or failed.";
+      };
+
+      rec.start();
+    }
+
+    function openDemoBooking(name) {
+      S.demoTarget = name;
+      document.getElementById('demoModalTitle').innerText = `Book Demo: ${name}`;
+      document.getElementById('demoModalBody').innerHTML = `
+        <form onsubmit="handleDemoSubmit(event)" class="space-y-3">
+          <div>
+            <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Your Full Name</label>
+            <input type="text" required placeholder="e.g. Youssef" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/50 dark:bg-slate-800 text-xs">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Preferred Date</label>
+            <input type="date" required class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/50 dark:bg-slate-800 text-xs">
+          </div>
+          <button type="submit" class="w-full py-2.5 bg-door-blue hover:bg-navy text-white rounded-xl text-xs font-bold transition mt-2">
+            Confirm Booking Request
+          </button>
+        </form>
+      `;
+      document.getElementById('demoModal').classList.remove('hidden');
+    }
+
+    function toggleDemoModal(show) {
+      const m = document.getElementById('demoModal');
+      if (show) m.classList.remove('hidden');
+      else m.classList.add('hidden');
+    }
+
+    function handleDemoSubmit(e) {
+      e.preventDefault();
+      document.getElementById('demoModalBody').innerHTML = `
+        <div class="text-center py-6 space-y-2">
+          <span class="text-4xl">🎉</span>
+          <h4 class="font-serif font-bold text-base text-emerald-600">Booking Confirmed!</h4>
+          <p class="text-xs text-slate-500">Your demo experience request for <strong>${S.demoTarget}</strong> has been sent to the artisan master.</p>
+          <button onclick="toggleDemoModal(false)" class="px-4 py-2 bg-navy text-white text-xs font-bold rounded-xl mt-3">Close</button>
+        </div>
+      `;
+    }
+
+    function renderChatMessages() {
+      const container = document.getElementById('chatMessagesContainer');
+      if (!container) return;
+
+      container.innerHTML = S.chatMessages.map(m => `
+        <div class="flex ${m.sender === 'user' ? 'justify-end' : 'justify-start'}">
+          <div class="max-w-[80%] p-3 rounded-2xl text-xs ${
+            m.sender === 'user' 
+              ? 'bg-door-blue text-white rounded-br-none shadow' 
+              : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-bl-none shadow border border-slate-200/60 dark:border-slate-700/60'
+          }">
+            ${m.text}
+          </div>
+        </div>
+      `).join('');
+
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function sendQuickChat(text) {
+      document.getElementById('chatInput').value = text;
+      handleChatSubmit(new Event('submit'));
+    }
+
+    function handleChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('chatInput');
+      const q = input.value.trim();
+      if (!q) return;
+
+      S.chatMessages.push({ sender: 'user', text: q });
+      input.value = '';
+      renderChatMessages();
+
+      // Keyword Knowledge Base Matching
+      const lq = q.toLowerCase();
+      let ans = "I'm not sure about that exact detail, but Tangier offers wonderful experiences! Try asking about mint tea, Kasbah, hammams, day trips, or local etiquette.";
+
+      if (/mint tea|atay|tea/i.test(lq)) {
+        ans = "Moroccan mint tea (Atay) is poured from a height to create foam. It is served sweet with fresh spearmint. Accepting a second cup is a sign of hospitality at Cafe Hafa!";
+      } else if (/kasbah|palace/i.test(lq)) {
+        ans = "The Kasbah sits at the highest point of Medina. Visit Dar el-Makhzen palace museum (20 MAD) and enjoy panoramic Strait views from Bab Raha!";
+      } else if (/cap spartel|lighthouse|caves|hercules/i.test(lq)) {
+        ans = "Cap Spartel is where the Atlantic Ocean meets the Mediterranean Sea. Pair it with the Hercules Caves nearby for a great half-day excursion!";
+      } else if (/hammam|bath/i.test(lq)) {
+        ans = "Hammam ritual involves warm steam, black olive soap (Sabon Beldi), and a thorough scrub with a Kessa glove. Remember to bring a towel and flip-flops!";
+      } else if (/day trip|chefchaouen|asilah/i.test(lq)) {
+        ans = "Chefchaouen (the Blue City) is 2.5 hours away by Grand Taxi. Asilah is 45 km south, famous for seaside white walls and colorful art murals!";
+      } else if (/etiquette|tip|bargain/i.test(lq)) {
+        ans = "Polite bargaining is customary in souks—start around 60% of original price. Tipping 5-10% in cafes and restaurants is customary and appreciated.";
+      }
+
+      setTimeout(() => {
+        S.chatMessages.push({ sender: 'bot', text: ans });
+        renderChatMessages();
+      }, 500);
+    }
+
+    function renderPlanView(container) {
+      if (S.planStep === 5 && S.generatedPlan) {
+        renderPlanDashboard(container);
+        return;
+      }
+
+      const p = S.planStep;
+
+      container.innerHTML = `
+        <div class="max-w-2xl mx-auto space-y-6">
+          <!-- Step Indicator -->
+          <div class="flex justify-between items-center bg-white dark:bg-darkcard p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow">
+            <span class="font-serif font-bold text-sm text-navy dark:text-amber-400">Step ${p} of 4: Customizing Itinerary</span>
+            <div class="flex gap-1">
+              ${[1, 2, 3, 4].map(i => `<div class="w-8 h-2 rounded-full ${i <= p ? 'bg-terracotta' : 'bg-slate-200 dark:bg-slate-700'}"></div>`).join('')}
+            </div>
+          </div>
+
+          <!-- Wizard Forms -->
+          <div class="bg-white dark:bg-darkcard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl">
+            ${getPlanStepHTML(p)}
+          </div>
+        </div>
+      `;
+    }
+
+    function getPlanStepHTML(step) {
+      if (step === 1) {
+        return `
+          <div class="space-y-4">
+            <h2 class="font-serif font-bold text-lg text-navy dark:text-amber-300">1. Destination & Duration</h2>
+            <div>
+              <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Destination</label>
+              <input type="text" readonly value="Tangier, Morocco" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/60 dark:bg-slate-800 font-bold text-xs">
+            </div>
+            <div>
+              <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Starting Point</label>
+              <input type="text" value="${S.planStartPoint}" oninput="S.planStartPoint=this.value" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/30 dark:bg-slate-800 text-xs font-bold">
+            </div>
+            <div>
+              <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Trip Length (Days: 1-7)</label>
+              <div class="flex items-center space-x-3 mt-1">
+                <input type="range" min="1" max="7" value="${S.planDays}" oninput="S.planDays=parseInt(this.value); document.getElementById('daysVal').innerText=this.value+' Days';" class="flex-1">
+                <span id="daysVal" class="font-serif font-bold text-sm text-terracotta w-16">${S.planDays} Days</span>
+              </div>
+            </div>
+            <button onclick="S.planStep=2; renderMainContent();" class="w-full py-3 bg-door-blue hover:bg-navy text-white rounded-xl font-bold text-xs transition mt-4">
+              Next: Interests & Pace &rarr;
+            </button>
+          </div>
+        `;
+      }
+
+      if (step === 2) {
+        const interests = [
+          { id: 'artisan', label: 'Artisan Workshops & Crafts / ورشات الصناعة' },
+          { id: 'food', label: 'Gastronomy & Culinary Tours / المأكولات' },
+          { id: 'literary', label: 'Art & Bohemian Tangier / الثقافة والفن' },
+          { id: 'hammam', label: 'Hammam & Wellness / الحمام التقليدي' },
+          { id: 'viewpoints', label: 'Photography & Viewpoints / المناظر' },
+          { id: 'rooftops', label: 'Rooftops & Sunset Spots / المقاهي والغروب' },
+          { id: 'daytrips', label: 'Day Trips & Excursions / الرحلات' }
+        ];
+
+        return `
+          <div class="space-y-4">
+            <h2 class="font-serif font-bold text-lg text-navy dark:text-amber-300">2. Interests & Pace</h2>
+            
+            <label class="text-xs font-bold text-slate-600 dark:text-slate-400 block">Select Interests</label>
+            <div class="space-y-2">
+              ${interests.map(item => `
+                <label class="flex items-center space-x-3 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-sand/40 dark:bg-slate-800 cursor-pointer">
+                  <input type="checkbox" ${S.planInterests.includes(item.id) ? 'checked' : ''} onchange="togglePlanInterest('${item.id}')" class="rounded text-terracotta">
+                  <span class="text-xs font-medium text-slate-700 dark:text-slate-200">${item.label}</span>
+                </label>
+              `).join('')}
+            </div>
+
+            <div class="pt-3 border-t dark:border-slate-800 grid grid-cols-2 gap-2">
+              <div>
+                <label class="text-xs font-bold text-slate-600 dark:text-slate-400 block mb-1">Rhythm</label>
+                <button onclick="S.planPace='slow'; renderMainContent();" class="w-full py-2 rounded-xl text-xs font-bold border ${S.planPace === 'slow' ? 'bg-navy text-white border-navy' : 'bg-sand dark:bg-slate-800'}">
+                  🐢 Slow & Immersive
+                </button>
+                <button onclick="S.planPace='express'; renderMainContent();" class="w-full py-2 rounded-xl text-xs font-bold border mt-1 ${S.planPace === 'express' ? 'bg-navy text-white border-navy' : 'bg-sand dark:bg-slate-800'}">
+                  ⚡ Express Tour
+                </button>
+              </div>
+              <div>
+                <label class="text-xs font-bold text-slate-600 dark:text-slate-400 block mb-1">Guidance</label>
+                <button onclick="S.planGuidance='self'; renderMainContent();" class="w-full py-2 rounded-xl text-xs font-bold border ${S.planGuidance === 'self' ? 'bg-navy text-white border-navy' : 'bg-sand dark:bg-slate-800'}">
+                  🗺️ Self-Guided
+                </button>
+                <button onclick="S.planGuidance='guided'; renderMainContent();" class="w-full py-2 rounded-xl text-xs font-bold border mt-1 ${S.planGuidance === 'guided' ? 'bg-navy text-white border-navy' : 'bg-sand dark:bg-slate-800'}">
+                  🧑‍🌾 Local Expert
+                </button>
+              </div>
+            </div>
+
+            <div class="flex gap-2 pt-2">
+              <button onclick="S.planStep=1; renderMainContent();" class="w-1/3 py-3 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl font-bold text-xs">Back</button>
+              <button onclick="S.planStep=3; renderMainContent();" class="w-2/3 py-3 bg-door-blue hover:bg-navy text-white rounded-xl font-bold text-xs">Next: Vibe & Group &rarr;</button>
+            </div>
+          </div>
+        `;
+      }
+
+      if (step === 3) {
+        const vibes = ['Calm & Relax', 'Adventure & Thrill', 'Cultural & Heritage', 'Bohemian & Artistic', 'Luxury & Wellness', 'Food & Culinary', 'Local & Authentic', 'Family & Easygoing'];
+        return `
+          <div class="space-y-4">
+            <h2 class="font-serif font-bold text-lg text-navy dark:text-amber-300">3. Vibe & Group Type</h2>
+            
+            <label class="text-xs font-bold text-slate-600 dark:text-slate-400 block">Select Vibes</label>
+            <div class="flex flex-wrap gap-2">
+              ${vibes.map(v => {
+                const k = v.toLowerCase().split(' ')[0];
+                const active = S.planVibes.includes(k);
+                return `
+                  <button onclick="togglePlanVibe('${k}')" class="px-3 py-1.5 rounded-full text-xs font-bold border transition ${active ? 'bg-terracotta text-white border-terracotta' : 'bg-sand dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-300'}">
+                    ${v}
+                  </button>
+                `;
+              }).join('')}
+            </div>
+
+            <div class="pt-3 border-t dark:border-slate-800">
+              <label class="text-xs font-bold text-slate-600 dark:text-slate-400 block mb-2">Group Dynamic</label>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="S.planGroup='friends'; renderMainContent();" class="py-2.5 rounded-xl text-xs font-bold border ${S.planGroup === 'friends' ? 'bg-door-blue text-white' : 'bg-sand dark:bg-slate-800'}">
+                  👥 Solo / Friends
+                </button>
+                <button onclick="S.planGroup='family'; renderMainContent();" class="py-2.5 rounded-xl text-xs font-bold border ${S.planGroup === 'family' ? 'bg-door-blue text-white' : 'bg-sand dark:bg-slate-800'}">
+                  👨‍👩‍👧 Family Friendly
+                </button>
+              </div>
+            </div>
+
+            <div class="flex gap-2 pt-2">
+              <button onclick="S.planStep=2; renderMainContent();" class="w-1/3 py-3 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl font-bold text-xs">Back</button>
+              <button onclick="S.planStep=4; renderMainContent();" class="w-2/3 py-3 bg-door-blue hover:bg-navy text-white rounded-xl font-bold text-xs">Next: Budget Optimizer &rarr;</button>
+            </div>
+          </div>
+        `;
+      }
+
+      if (step === 4) {
+        const p = S.planBudgetPercents;
+        const total = S.planTotalBudget;
+
+        return `
+          <div class="space-y-4">
+            <h2 class="font-serif font-bold text-lg text-navy dark:text-amber-300">4. Budget Optimizer (MAD)</h2>
+            
+            <div>
+              <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Total Budget (MAD)</label>
+              <input type="number" value="${total}" oninput="S.planTotalBudget=parseFloat(this.value)||0; updateBudgetLabels();" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/40 dark:bg-slate-800 font-serif font-bold text-base text-terracotta">
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1">
+                  <span>🍲 Food (${p.food}%)</span>
+                  <span id="b-food-mad">${Math.round(total * p.food / 100)} MAD</span>
+                </div>
+                <input type="range" value="${p.food}" min="0" max="100" oninput="handleSliderChange('food', parseInt(this.value))" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1">
+                  <span>🎟️ Activities (${p.activities}%)</span>
+                  <span id="b-act-mad">${Math.round(total * p.activities / 100)} MAD</span>
+                </div>
+                <input type="range" value="${p.activities}" min="0" max="100" oninput="handleSliderChange('activities', parseInt(this.value))" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1">
+                  <span>🚕 Transport (${p.transport}%)</span>
+                  <span id="b-trans-mad">${Math.round(total * p.transport / 100)} MAD</span>
+                </div>
+                <input type="range" value="${p.transport}" min="0" max="100" oninput="handleSliderChange('transport', parseInt(this.value))" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1">
+                  <span>🏨 Stay (${p.stay}%)</span>
+                  <span id="b-stay-mad">${Math.round(total * p.stay / 100)} MAD</span>
+                </div>
+                <input type="range" value="${p.stay}" min="0" max="100" oninput="handleSliderChange('stay', parseInt(this.value))" class="w-full">
+              </div>
+            </div>
+
+            <div class="p-3 bg-amber-50 dark:bg-slate-800 rounded-xl text-center border border-amber-200 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-300">
+              Total Allocation: 100% (${total} MAD)
+            </div>
+
+            <div class="flex gap-2 pt-2">
+              <button onclick="S.planStep=3; renderMainContent();" class="w-1/3 py-3 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl font-bold text-xs">Back</button>
+              <button onclick="generatePlanItinerary()" class="w-2/3 py-3 bg-terracotta hover:bg-red-700 text-white rounded-xl font-bold text-xs shadow-lg">
+                ✨ Generate My Bawsala Plan
+              </button>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function togglePlanInterest(id) {
+      if (S.planInterests.includes(id)) {
+        S.planInterests = S.planInterests.filter(x => x !== id);
+      } else {
+        S.planInterests.push(id);
+      }
+    }
+
+    function togglePlanVibe(k) {
+      if (S.planVibes.includes(k)) {
+        S.planVibes = S.planVibes.filter(x => x !== k);
+      } else {
+        S.planVibes.push(k);
+      }
+      renderMainContent();
+    }
+
+    function handleSliderChange(changedKey, newVal) {
+      const keys = ['food', 'activities', 'transport', 'stay'];
+      const oldVal = S.planBudgetPercents[changedKey];
+      const delta = newVal - oldVal;
+
+      S.planBudgetPercents[changedKey] = newVal;
+      const otherKeys = keys.filter(k => k !== changedKey);
+      const otherSum = otherKeys.reduce((acc, k) => acc + S.planBudgetPercents[k], 0);
+
+      if (otherSum > 0) {
+        otherKeys.forEach(k => {
+          let proportion = S.planBudgetPercents[k] / otherSum;
+          let newOtherVal = Math.max(0, Math.round(S.planBudgetPercents[k] - (delta * proportion)));
+          S.planBudgetPercents[k] = newOtherVal;
+        });
+      } else {
+        let equalSplit = Math.max(0, Math.floor((100 - newVal) / 3));
+        otherKeys.forEach(k => S.planBudgetPercents[k] = equalSplit);
+      }
+
+      // Guarantee sum = 100
+      let currentSum = keys.reduce((acc, k) => acc + S.planBudgetPercents[k], 0);
+      let diff = 100 - currentSum;
+      if (diff !== 0) {
+        let largestKey = otherKeys.reduce((maxKey, k) => S.planBudgetPercents[k] > S.planBudgetPercents[maxKey] ? k : maxKey, otherKeys[0]);
+        S.planBudgetPercents[largestKey] = Math.max(0, S.planBudgetPercents[largestKey] + diff);
+      }
+
+      renderMainContent();
+    }
+
+    function updateBudgetLabels() {
+      renderMainContent();
+    }
+
+    function generatePlanItinerary() {
+      S.isGeneratingPlan = true;
+      renderMainContent();
+
+      setTimeout(() => {
+        // Collect candidate places matching interests
+        let candidates = [];
+        const mapCategory = {
+          artisan: 'workshops',
+          food: 'food',
+          literary: 'heritage',
+          hammam: 'tours',
+          viewpoints: 'heritage',
+          rooftops: 'food',
+          daytrips: 'tours'
+        };
+
+        S.planInterests.forEach(iKey => {
+          let cat = mapCategory[iKey] || 'heritage';
+          if (PLACES_DATA[cat]) {
+            candidates.push(...PLACES_DATA[cat]);
+          }
+        });
+
+        if (candidates.length < 8) {
+          candidates.push(...PLACES_DATA.heritage, ...PLACES_DATA.tours);
+        }
+
+        // Deduplicate & sort by rating
+        const uniqueMap = new Map();
+        candidates.forEach(item => uniqueMap.set(item.name, item));
+        let pool = Array.from(uniqueMap.values()).sort((a, b) => b.rating - a.rating);
+
+        // Fill days (2 stops for Slow, 3 stops for Express)
+        const stopsPerDay = S.planPace === 'slow' ? 2 : 3;
+        const times = ['09:30 AM', '01:00 PM', '04:30 PM'];
+        let dayList = [];
+
+        for (let d = 1; d <= S.planDays; d++) {
+          let stops = [];
+          for (let s = 0; s < stopsPerDay; s++) {
+            let itemIndex = ((d - 1) * stopsPerDay + s) % pool.length;
+            stops.push({
+              time: times[s] || '02:00 PM',
+              place: pool[itemIndex]
+            });
+          }
+          dayList.push({ dayNum: d, stops });
+        }
+
+        S.generatedPlan = dayList;
+        S.isGeneratingPlan = false;
+        S.planStep = 5;
+        renderMainContent();
+      }, 1200);
+    }
+
+    function renderPlanDashboard(container) {
+      if (S.isGeneratingPlan) {
+        container.innerHTML = `
+          <div class="py-20 text-center space-y-4">
+            <div class="w-12 h-12 border-4 border-terracotta border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <h3 class="font-serif font-bold text-lg text-navy dark:text-amber-400">Crafting Your Tangier Experience...</h3>
+            <p class="text-xs text-slate-500">Curating artisans, viewpoints & local food stops</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Calculate total cost
+      let totalActivitiesCost = 0;
+      S.generatedPlan.forEach(day => {
+        day.stops.forEach(s => {
+          totalActivitiesCost += (s.place.cost || 20) + 10; // 10 MAD transport per stop
+        });
+      });
+      totalActivitiesCost += (S.planDays * 30); // 30 MAD daily local taxi
+
+      const isWithinBudget = totalActivitiesCost <= S.planTotalBudget;
+
+      container.innerHTML = `
+        <div class="space-y-6">
+          <div class="flex justify-between items-center">
+            <h1 class="font-serif font-bold text-2xl text-navy dark:text-amber-400">🧭 Your Tangier Itinerary</h1>
+            <button onclick="S.planStep=1; S.generatedPlan=null; renderMainContent();" class="px-3 py-1.5 bg-sand dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl text-xs font-bold border">
+              🔄 New Plan
+            </button>
+          </div>
+
+          <!-- Weather & eSIM Tip Card -->
+          <div class="bg-gradient-to-r from-navy via-door-blue to-darknavy text-white p-5 rounded-2xl shadow-xl flex flex-col sm:flex-row justify-between gap-4">
+            <div class="flex items-center space-x-3">
+              <span class="text-4xl">☀️</span>
+              <div>
+                <h3 class="font-bold text-sm text-amber-300">Tangier Weather: 22°C Sunny</h3>
+                <p class="text-xs text-slate-200">Ideal weather for Kasbah alleyways & Cap Spartel walks.</p>
+              </div>
+            </div>
+            <div class="bg-white/10 p-3 rounded-xl backdrop-blur-md text-xs">
+              <span class="font-bold text-amber-300">📲 Local eSIM Tip:</span>
+              <p class="text-[11px] opacity-90 mt-0.5">Pick up an Orange/Inwi tourist SIM (~50 MAD) at Tangier Port Terminal.</p>
+            </div>
+          </div>
+
+          <!-- Total Cost Banner -->
+          <div class="p-4 rounded-2xl border flex justify-between items-center ${isWithinBudget ? 'bg-emerald-50 border-emerald-200 dark:bg-emerald-950/40 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200' : 'bg-rose-50 border-rose-200 dark:bg-rose-950/40 dark:border-rose-800 text-rose-900 dark:text-rose-200'}">
+            <div>
+              <span class="text-xs font-bold uppercase">Estimated Total Cost</span>
+              <p class="font-serif font-bold text-xl">${totalActivitiesCost} MAD</p>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold ${isWithinBudget ? 'bg-emerald-200 text-emerald-900' : 'bg-rose-200 text-rose-900'}">
+              ${isWithinBudget ? '✓ Within Budget' : '⚠️ Over Budget'}
+            </span>
+          </div>
+
+          <!-- Day-by-Day List -->
+          <div class="space-y-4">
+            ${S.generatedPlan.map((day, dIdx) => `
+              <div class="bg-white dark:bg-darkcard rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-md">
+                <h3 class="font-serif font-bold text-base text-navy dark:text-amber-400 mb-3 border-b pb-2 dark:border-slate-800">
+                  Day ${day.dayNum} - Tangier Exploration
+                </h3>
+                <div class="space-y-3">
+                  ${day.stops.map((stop, sIdx) => `
+                    <div class="p-3 bg-sand/50 dark:bg-slate-800/60 rounded-xl flex items-center justify-between gap-3 border border-slate-200/50 dark:border-slate-700/50">
+                      <div class="flex items-center space-x-3">
+                        <span class="px-2.5 py-1 bg-amber-400 text-navy font-bold rounded-lg text-xs">${stop.time}</span>
+                        <div>
+                          <p class="font-bold text-xs text-slate-800 dark:text-slate-100">${stop.place.name}</p>
+                          <p class="text-[11px] text-slate-500 dark:text-slate-400">${stop.place.price} · ${stop.place.hours}</p>
+                        </div>
+                      </div>
+                      <button onclick="openSwapModal(${dIdx}, ${sIdx})" class="px-2.5 py-1 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-[11px] font-bold hover:bg-amber-100 dark:hover:bg-slate-600">
+                        🔄 Swap
+                      </button>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function openSwapModal(dIdx, sIdx) {
+      S.swapDayIdx = dIdx;
+      S.swapStopIdx = sIdx;
+      
+      const allItems = [...PLACES_DATA.heritage, ...PLACES_DATA.workshops, ...PLACES_DATA.food, ...PLACES_DATA.tours];
+      
+      const m = document.getElementById('demoModal');
+      document.getElementById('demoModalTitle').innerText = "Swap Activity Stop";
+      document.getElementById('demoModalBody').innerHTML = `
+        <div class="space-y-2 max-h-80 overflow-y-auto">
+          ${allItems.map(item => `
+            <button onclick="confirmSwap('${item.name}')" class="w-full text-left p-2.5 bg-sand dark:bg-slate-800 rounded-xl hover:bg-amber-100 text-xs font-bold flex justify-between items-center">
+              <span>${item.name}</span>
+              <span class="text-terracotta">${item.price}</span>
+            </button>
+          `).join('')}
+        </div>
+      `;
+      m.classList.remove('hidden');
+    }
+
+    function confirmSwap(newItemName) {
+      const allItems = [...PLACES_DATA.heritage, ...PLACES_DATA.workshops, ...PLACES_DATA.food, ...PLACES_DATA.tours];
+      const newItem = allItems.find(i => i.name === newItemName);
+      
+      if (newItem && S.swapDayIdx !== null && S.swapStopIdx !== null) {
+        S.generatedPlan[S.swapDayIdx].stops[S.swapStopIdx].place = newItem;
+      }
+
+      toggleDemoModal(false);
+      renderMainContent();
+    }
+
+    function renderMatchView(container) {
+      // Calculate match score for all profiles against user plan
+      const scoredDeck = MATCH_PROFILES.map(p => {
+        let score = 50;
+        // Shared interests (+14 each)
+        p.interests.forEach(i => { if (S.planInterests.includes(i)) score += 14; });
+        // Shared vibes (+9 each)
+        p.vibes.forEach(v => { if (S.planVibes.includes(v)) score += 9; });
+        // Budget compatibility (+6)
+        if (Math.abs(p.budget - (S.planTotalBudget / S.planDays)) <= 300) score += 6;
+        // Group match (+5)
+        if (p.group === S.planGroup) score += 5;
+
+        score = Math.min(99, score);
+        return { ...p, score };
+      }).sort((a, b) => b.score - a.score);
+
+      const currentMatch = scoredDeck[S.matchIndex % scoredDeck.length];
+
+      container.innerHTML = `
+        <div class="max-w-md mx-auto space-y-4">
+          <div class="text-center space-y-1">
+            <h1 class="font-serif font-bold text-2xl text-navy dark:text-amber-400">🤝 Traveler Match</h1>
+            <p class="text-xs text-slate-500">Connect with travelers sharing similar Tangier itineraries</p>
+          </div>
+
+          <!-- Swipe Deck Card -->
+          <div id="matchCard" class="bg-white dark:bg-darkcard rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden transition-transform duration-300">
+            <!-- Card Header -->
+            <div class="${currentMatch.color} p-6 text-white flex items-center space-x-4">
+              <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-2xl font-serif font-bold ring-4 ring-white/30">
+                ${currentMatch.initial}
+              </div>
+              <div>
+                <h3 class="font-serif font-bold text-xl">${currentMatch.name}, ${currentMatch.age}</h3>
+                <p class="text-xs opacity-90">📍 ${currentMatch.origin}</p>
+                <p class="text-[11px] opacity-80">📅 ${currentMatch.dates}</p>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 space-y-4">
+              <div class="flex justify-between items-center bg-emerald-50 dark:bg-emerald-950/40 p-3 rounded-2xl border border-emerald-200 dark:border-emerald-800">
+                <span class="text-xs font-bold text-emerald-800 dark:text-emerald-200">${currentMatch.score}% Compatibility</span>
+                <span class="text-[11px] text-emerald-700 dark:text-emerald-300 font-medium">Same plan style</span>
+              </div>
+
+              <p class="text-xs text-slate-600 dark:text-slate-300 italic leading-relaxed">
+                "${currentMatch.bio}"
+              </p>
+
+              <div>
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Their Tangier Interests</span>
+                <div class="flex flex-wrap gap-1.5">
+                  ${currentMatch.interests.map(i => {
+                    const shared = S.planInterests.includes(i);
+                    return `
+                      <span class="px-2.5 py-1 rounded-full text-[11px] font-bold ${shared ? 'bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-200 border border-amber-300' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'}">
+                        ${shared ? '✓ ' : ''}${i}
+                      </span>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="p-4 bg-sand/40 dark:bg-slate-800/40 border-t dark:border-slate-800 flex justify-around items-center">
+              <button onclick="handleMatchAction(false)" class="w-14 h-14 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-full text-2xl flex items-center justify-center shadow transition active:scale-90">
+                ❌
+              </button>
+              <button onclick="handleMatchAction(true)" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full text-2xl flex items-center justify-center shadow-lg transition active:scale-90">
+                💚
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      setupSwipeGesture();
+    }
+
+    function setupSwipeGesture() {
+      const card = document.getElementById('matchCard');
+      if (!card) return;
+
+      let startX = 0;
+      let currentX = 0;
+
+      card.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      card.addEventListener('touchmove', (e) => {
+        currentX = e.touches[0].clientX;
+        let diff = currentX - startX;
+        card.style.transform = `translateX(${diff}px) rotate(${diff * 0.05}deg)`;
+      });
+
+      card.addEventListener('touchend', () => {
+        let diff = currentX - startX;
+        if (diff > 70) {
+          handleMatchAction(true);
+        } else if (diff < -70) {
+          handleMatchAction(false);
+        } else {
+          card.style.transform = 'none';
+        }
+      });
+    }
+
+    function handleMatchAction(connect) {
+      if (connect) {
+        openMatchChatModal();
+      } else {
+        S.matchIndex++;
+        renderMainContent();
+      }
+    }
+
+    function openMatchChatModal() {
+      const m = document.getElementById('demoModal');
+      document.getElementById('demoModalTitle').innerText = "Match Found! 💬";
+      document.getElementById('demoModalBody').innerHTML = `
+        <div class="space-y-3">
+          <p class="text-xs text-slate-600 dark:text-slate-300">You connected! Start a conversation to explore Tangier together.</p>
+          <div class="p-3 bg-amber-50 dark:bg-slate-800 rounded-xl text-xs space-y-2 border">
+            <p><strong>Traveler:</strong> Salam! Ready to grab mint tea at Cafe Hafa?</p>
+          </div>
+          <form onsubmit="sendMatchMsg(event)" class="flex gap-2">
+            <input type="text" placeholder="Type a message..." required class="flex-1 p-2 rounded-xl text-xs border dark:bg-slate-800">
+            <button type="submit" class="px-3 py-2 bg-door-blue text-white rounded-xl text-xs font-bold">Send</button>
+          </form>
+        </div>
+      `;
+      m.classList.remove('hidden');
+    }
+
+    function sendMatchMsg(e) {
+      e.preventDefault();
+      document.getElementById('demoModalBody').innerHTML = `
+        <div class="text-center py-6 space-y-2">
+          <span class="text-3xl">💌</span>
+          <p class="font-bold text-xs text-emerald-600">Message Sent!</p>
+          <p class="text-[11px] text-slate-500">They will reply soon via notifications.</p>
+          <button onclick="S.matchIndex++; toggleDemoModal(false); renderMainContent();" class="px-4 py-2 bg-navy text-white text-xs font-bold rounded-xl mt-2">Next Traveler</button>
+        </div>
+      `;
+    }
+
+    function renderProfileView(container) {
+      const p = S.userProfile;
+
+      container.innerHTML = `
+        <div class="max-w-md mx-auto bg-white dark:bg-darkcard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+          <div class="text-center space-y-2">
+            <div class="relative w-24 h-24 mx-auto rounded-full bg-navy text-amber-400 font-serif font-bold text-3xl flex items-center justify-center overflow-hidden ring-4 ring-amber-400/40">
+              ${p.avatar ? `<img src="${p.avatar}" class="w-full h-full object-cover">` : p.name.charAt(0)}
+              <input type="file" accept="image/*" onchange="handleAvatarUpload(event)" class="absolute inset-0 opacity-0 cursor-pointer" title="Upload Photo">
+            </div>
+            <p class="text-[10px] text-slate-400">Click photo to upload custom avatar</p>
+            <h2 class="font-serif font-bold text-xl text-navy dark:text-amber-400">${p.name}</h2>
+          </div>
+
+          <form onsubmit="handleProfileSave(event)" class="space-y-3">
+            <div>
+              <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Full Name</label>
+              <input type="text" value="${p.name}" oninput="S.userProfile.name=this.value" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/40 dark:bg-slate-800 text-xs font-bold">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Age</label>
+                <input type="number" value="${p.age}" oninput="S.userProfile.age=parseInt(this.value)" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/40 dark:bg-slate-800 text-xs font-bold">
+              </div>
+              <div>
+                <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Preferred Vibe</label>
+                <select onchange="S.userProfile.vibe=this.value" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/40 dark:bg-slate-800 text-xs font-bold">
+                  <option value="authentic" ${p.vibe === 'authentic' ? 'selected' : ''}>Authentic & Local</option>
+                  <option value="cozy" ${p.vibe === 'cozy' ? 'selected' : ''}>Cozy & Relaxed</option>
+                  <option value="adventure" ${p.vibe === 'adventure' ? 'selected' : ''}>Adventure</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Hobbies & Interests</label>
+              <input type="text" value="${p.hobbies}" oninput="S.userProfile.hobbies=this.value" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/40 dark:bg-slate-800 text-xs">
+            </div>
+
+            <div>
+              <label class="text-xs font-bold text-slate-600 dark:text-slate-400">Visited Cities</label>
+              <input type="text" value="${p.visitedCities}" oninput="S.userProfile.visitedCities=this.value" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-sand/40 dark:bg-slate-800 text-xs">
+            </div>
+
+            <button type="submit" class="w-full py-3 bg-terracotta hover:bg-red-700 text-white rounded-xl text-xs font-bold transition shadow-lg mt-2">
+              Save Profile Changes
+            </button>
+          </form>
+        </div>
+      `;
+    }
+
+    function handleAvatarUpload(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          S.userProfile.avatar = event.target.result;
+          renderMainContent();
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function handleProfileSave(e) {
+      e.preventDefault();
+      const m = document.getElementById('demoModal');
+      document.getElementById('demoModalTitle').innerText = "Profile Saved";
+      document.getElementById('demoModalBody').innerHTML = `
+        <div class="text-center py-4 space-y-2">
+          <span class="text-3xl">✅</span>
+          <p class="font-bold text-xs text-emerald-600">Your profile details have been updated!</p>
+          <button onclick="toggleDemoModal(false)" class="px-4 py-2 bg-navy text-white text-xs font-bold rounded-xl mt-2">Close</button>
+        </div>
+      `;
+      m.classList.remove('hidden');
+    }
+
+    /* Initial App Load Listener */
+    window.onload = function() {
+      renderMainContent();
+    };
+  </script>
 </body>
 </html>
