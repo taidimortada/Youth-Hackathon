@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Baosala - Discover Tangier Differently</title>
+<meta name="theme-color" content="#0f2b48">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Baosala">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={darkMode:'class'}</script>
 <style>
@@ -25,6 +33,24 @@ html,body{height:100%;margin:0;font-family:Georgia,'Times New Roman',serif;backg
 .mapbox{height:70px;border-radius:10px;background:repeating-linear-gradient(45deg,#d9e6df 0 10px,#c9dbd2 10px 20px);display:flex;align-items:center;justify-content:center;font-size:13px;color:#0f2b48}
 .dark .mapbox{background:repeating-linear-gradient(45deg,#17344f 0 10px,#12293f 10px 20px);color:#cfe}
 .sw{transition:transform .3s,opacity .3s}
+@media(min-width:1024px){
+#app{max-width:1280px!important;display:grid!important;grid-template-columns:240px 1fr;grid-template-rows:auto 1fr;grid-template-areas:"h h" "n m"}
+#hd{grid-area:h}
+#nv{grid-area:n;flex-direction:column!important;justify-content:flex-start!important;gap:6px;padding:20px 12px!important;border-top:0!important;border-right:1px solid #e3d3b5;align-self:stretch}
+.dark #nv{border-right-color:#23405f}
+#nv button{flex-direction:row!important;width:100%!important;gap:12px;font-size:16px!important;padding:12px 14px;border-radius:12px;justify-content:flex-start}
+#nv button:hover{background:#c8553d18}
+#main{grid-area:m;padding:24px 32px!important;display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;align-content:start}
+#main>*{grid-column:1/-1}
+#main>.card.mb-3{grid-column:auto;margin:0!important}
+#main[data-t=narrow]{display:block;max-width:680px;margin:0 auto;width:100%}
+#main>.grid-cols-2{grid-template-columns:repeat(4,1fr)}
+#hm .grid-cols-4{grid-template-columns:repeat(8,1fr)!important}
+#res{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+#res .card{margin:0!important}
+#modal{align-items:center!important}
+#modal .card{border-radius:20px!important}
+}
 </style>
 </head>
 <body>
@@ -72,9 +98,9 @@ const star=r=>'⭐ '+r;
 function openM(h){const m=$('#modal');m.innerHTML='<div class="card w-full max-w-md max-h-[88%] overflow-y-auto p-4" style="border-radius:20px 20px 0 0">'+h+'<button class="btn2 w-full mt-3" onclick="closeM()">'+t('close')+'</button></div>';m.classList.remove('hidden');m.classList.add('flex')}
 function closeM(){const m=$('#modal');m.classList.add('hidden');m.classList.remove('flex')}
 function logo(){return '<span class="inline-flex items-center bg-[#0f2b48] text-white px-2 py-1 rounded-lg font-bold text-lg" dir="ltr">Ba<svg width="20" height="20" viewBox="0 0 24 24" class="mx-px"><circle cx="12" cy="12" r="10" fill="none" stroke="#f5c518" stroke-width="2.5"/><path d="M12 4l3 8-3 8-3-8z" fill="#f5c518"/><path d="M12 4l3 8H9z" fill="#c8553d"/></svg>sala</span>'}
-function header(){return '<div class="zel"></div><div class="flex items-center justify-between px-3 py-2">'+logo()+'<div class="flex items-center gap-2"><select class="inp !w-auto !py-1" onchange="setLang(this.value)">'+[['en','English'],['fr','Français'],['ar','العربية'],['es','Español']].map(l=>'<option value="'+l[0]+'"'+(S.lang==l[0]?' selected':'')+'>'+l[1]+'</option>').join('')+'</select><button class="relative text-xl" onclick="notifM()">🔔'+(S.unread?'<span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-red-600"></span>':'')+'</button><button class="text-xl" onclick="toggleTheme()">'+(S.dark?'☀️':'🌙')+'</button><button class="text-xl" onclick="aboutM()">🌍</button></div></div>'}
-function nav(){const it=[['home','🏠'],['explore','🗺️'],['plan','🧭'],['match','🤝'],['profile','👤']];return '<div class="flex justify-around border-t py-2 card !rounded-none">'+it.map(i=>'<button onclick="go(\''+i[0]+'\')" class="flex flex-col items-center text-xs w-16 '+(S.tab==i[0]?'text-[#c8553d] font-bold':'opacity-70')+'"><span class="text-2xl">'+i[1]+'</span>'+t(i[0])+'</button>').join('')+'</div>'}
-function render(){document.documentElement.dir=S.lang=='ar'?'rtl':'ltr';document.documentElement.lang=S.lang;document.documentElement.classList.toggle('dark',S.dark);const v={home:home,explore:explore,plan:planV,match:matchV,profile:profV}[S.tab];$('#app').innerHTML=header()+'<div id="main" class="flex-1 overflow-y-auto p-3 pb-6">'+v()+'</div>'+nav();if(S.tab=='home')showSearch();if(S.tab=='explore'&&S.cat=='currency')conv()}
+function header(){return '<div id="hd"><div class="zel"></div><div class="flex items-center justify-between px-3 py-2">'+logo()+'<div class="flex items-center gap-2"><select class="inp !w-auto !py-1" onchange="setLang(this.value)">'+[['en','English'],['fr','Français'],['ar','العربية'],['es','Español']].map(l=>'<option value="'+l[0]+'"'+(S.lang==l[0]?' selected':'')+'>'+l[1]+'</option>').join('')+'</select><button class="relative text-xl" onclick="notifM()">🔔'+(S.unread?'<span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-red-600"></span>':'')+'</button><button class="text-xl" onclick="toggleTheme()">'+(S.dark?'☀️':'🌙')+'</button><button class="text-xl" onclick="aboutM()">🌍</button></div></div></div>'}
+function nav(){const it=[['home','🏠'],['explore','🗺️'],['plan','🧭'],['match','🤝'],['profile','👤']];return '<div id="nv" class="flex justify-around border-t py-2 card !rounded-none">'+it.map(i=>'<button onclick="go(\''+i[0]+'\')" class="flex flex-col items-center text-xs w-16 '+(S.tab==i[0]?'text-[#c8553d] font-bold':'opacity-70')+'"><span class="text-2xl">'+i[1]+'</span>'+t(i[0])+'</button>').join('')+'</div>'}
+function render(){document.documentElement.dir=S.lang=='ar'?'rtl':'ltr';document.documentElement.lang=S.lang;document.documentElement.classList.toggle('dark',S.dark);const v={home:home,explore:explore,plan:planV,match:matchV,profile:profV}[S.tab];$('#app').innerHTML=header()+'<div id="main" data-t="'+((['plan','match','profile'].includes(S.tab)||(S.tab=='explore'&&(S.cat=='currency'||S.cat=='translator')))?'narrow':'wide')+'" class="flex-1 overflow-y-auto p-3 pb-6">'+v()+'</div>'+nav();if(S.tab=='home')showSearch();if(S.tab=='explore'&&S.cat=='currency')conv()}
 function go(x){S.tab=x;if(x=='explore')S.cat=null;render()}
 function setLang(l){S.lang=l;render()}
 function toggleTheme(){S.dark=!S.dark;render()}
@@ -121,6 +147,7 @@ function send(n){const i=$('#ci'),v=i.value.trim();if(!v)return;S.chat.push(['me
 function profV(){const p=S.prof;return '<h1 class="text-xl font-bold mb-2">👤 '+t('profile')+'</h1><div class="card p-4"><div class="text-center mb-3"><div class="w-20 h-20 rounded-full mx-auto bg-[#0f2b48] text-white text-3xl flex items-center justify-center overflow-hidden" id="av">'+(S.photo?'<img src="'+S.photo+'" class="w-full h-full object-cover">':(p.name[0]||'🙂'))+'</div><input type="file" accept="image/*" class="text-xs mt-2" onchange="photo(this)"></div><input class="inp mb-2" placeholder="Name" value="'+p.name+'" oninput="S.prof.name=this.value"><input class="inp mb-2" placeholder="Age" type="number" value="'+p.age+'" oninput="S.prof.age=this.value"><input class="inp mb-2" placeholder="Hobbies (history, photo, food, crafts...)" value="'+p.hobbies+'" oninput="S.prof.hobbies=this.value"><input class="inp mb-2" placeholder="Visited cities" value="'+p.cities+'" oninput="S.prof.cities=this.value"><select class="inp mb-2" onchange="S.prof.vibe=this.value"><option>Calm</option><option '+(p.vibe=='Adventure'?'selected':'')+'>Adventure</option></select><button class="btn w-full" onclick="saveP()">'+t('save')+'</button></div><p class="text-xs opacity-70 mt-2">Your hobbies tune the match scores. Data stays in this session only.</p>'}
 function photo(el){const f=el.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{S.photo=r.result;render()};r.readAsDataURL(f)}
 function saveP(){openM('<div class="text-center py-4"><div class="text-4xl">✅</div><p>Profile saved. Match scores are updated.</p></div>')}
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 render();
 </script>
 </body>
